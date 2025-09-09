@@ -81,6 +81,7 @@
         fetch('data.json')
             .then(r => r.json())
             .then(data => {
+                console.log(data.capabilities); // <-- Ajoute ceci
                 capabilitiesData = data.capabilities;
                 renderCapabilities();
             });
