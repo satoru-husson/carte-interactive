@@ -60,7 +60,7 @@
         }
       ]
     }
-    // Ajoute 4 autres capabilities selon ton besoin
+    // Ajoute les autres capabilities ici
   ],
   "productsBySubcapability": {
     "Capability 1": {
