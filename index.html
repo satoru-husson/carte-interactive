@@ -7,10 +7,30 @@
     <style>
         body { display: flex; }
         #sidebar { width: 18%; padding: 20px; }
-        #map { height: 800px; width: 82%; margin-bottom: 20px; }
-        .capability { margin-bottom: 15px; }
-        .sub-cap-btn { margin: 5px; }
-        .active { background: #3388ff; color: #fff; }
+        #map { height: 800px; width: 80%; margin-bottom: 20px; }
+        .cap-btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 8px;
+            font-weight: bold;
+            background: #f0f0f0;
+            border: 1px solid #3388ff;
+            cursor: pointer;
+        }
+        .cap-btn.active {
+            background: #3388ff;
+            color: #fff;
+        }
+        .sub-cap-btn {
+            display: block;
+            width: 95%;
+            margin: 5px 0 5px 10px;
+            padding: 6px;
+            background: #e0e0e0;
+            border: 1px solid #aaa;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +101,6 @@
         fetch('data.json')
             .then(r => r.json())
             .then(data => {
-                console.log(data.capabilities); // <-- Ajoute ceci
                 capabilitiesData = data.capabilities;
                 renderCapabilities();
             });

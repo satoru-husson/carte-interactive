@@ -3,21 +3,61 @@
     {
       "name": "Capability 1",
       "subCapabilities": [
-        { "name": "Subcap 1", "productsByCountry": {} },
-        { "name": "Subcap 2", "productsByCountry": {} },
-        { "name": "Subcap 3", "productsByCountry": {} },
-        { "name": "Subcap 4", "productsByCountry": {} },
-        { "name": "Subcap 5", "productsByCountry": {} }
+        {
+          "name": "Subcap 1",
+          "productsByCountry": {
+            "France": ["Produit A", "Produit B"],
+            "Germany": ["Produit B"],
+            "Spain": ["Produit C"]
+          }
+        },
+        {
+          "name": "Subcap 2",
+          "productsByCountry": {
+            "France": ["Produit D"],
+            "Italy": ["Produit E"]
+          }
+        },
+        {
+          "name": "Subcap 3",
+          "productsByCountry": {}
+        },
+        {
+          "name": "Subcap 4",
+          "productsByCountry": {}
+        },
+        {
+          "name": "Subcap 5",
+          "productsByCountry": {}
+        }
       ]
     },
     {
       "name": "Capability 2",
       "subCapabilities": [
-        { "name": "Subcap 1", "productsByCountry": {} },
-        { "name": "Subcap 2", "productsByCountry": {} },
-        { "name": "Subcap 3", "productsByCountry": {} },
-        { "name": "Subcap 4", "productsByCountry": {} },
-        { "name": "Subcap 5", "productsByCountry": {} }
+        {
+          "name": "Subcap 1",
+          "productsByCountry": {
+            "France": ["Produit F"],
+            "Germany": ["Produit G"]
+          }
+        },
+        {
+          "name": "Subcap 2",
+          "productsByCountry": {}
+        },
+        {
+          "name": "Subcap 3",
+          "productsByCountry": {}
+        },
+        {
+          "name": "Subcap 4",
+          "productsByCountry": {}
+        },
+        {
+          "name": "Subcap 5",
+          "productsByCountry": {}
+        }
       ]
     }
     // Ajoute les autres capabilities ici
