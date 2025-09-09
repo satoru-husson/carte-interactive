@@ -110,6 +110,7 @@
     ];
 
     let selectedCapability = null;
+    let productsData = {};
 
     function renderCapabilities() {
         const container = document.getElementById('capabilities-container');
@@ -124,15 +125,13 @@
             };
             container.appendChild(capBtn);
 
-            // Affiche les subcapabilities si la capability est sélectionnée
             if (selectedCapability === i) {
                 cap.subCapabilities.forEach((sub, j) => {
                     const subBtn = document.createElement('button');
                     subBtn.textContent = sub.name;
                     subBtn.className = 'sub-cap-btn';
                     subBtn.onclick = () => {
-                        // Ajoute ici la logique pour gérer le clic sur une subcapability
-                        alert(`Subcapability sélectionnée : ${sub.name}`);
+                        showCountriesForSubcapability(cap.name, sub.name);
                     };
                     container.appendChild(subBtn);
                 });
@@ -140,8 +139,50 @@
         });
     }
 
+    function showCountriesForSubcapability(capName, subName) {
+        // Efface la carte précédente
+        map.eachLayer(function (layer) {
+            if (layer instanceof L.GeoJSON) {
+                map.removeLayer(layer);
+            }
+        });
+        fetch('countries.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: {
+                        color: "#3388ff",
+                        weight: 1,
+                        fillOpacity: 0.2
+                    },
+                    filter: function(feature) {
+                        const country = feature.properties.ADMIN;
+                        return productsData.productsBySubcapability[capName] &&
+                            productsData.productsBySubcapability[capName][subName] &&
+                            productsData.productsBySubcapability[capName][subName][country] &&
+                            productsData.productsBySubcapability[capName][subName][country].length > 0;
+                    },
+                    onEachFeature: function (feature, layer) {
+                        const country = feature.properties.ADMIN;
+                        const products = productsData.productsBySubcapability[capName][subName][country] || [];
+                        let popupHtml = `<strong>${country}</strong><br/>Produits:<ul>`;
+                        products.forEach(prod => {
+                            popupHtml += `<li>${prod}</li>`;
+                        });
+                        popupHtml += '</ul>';
+                        layer.bindPopup(popupHtml);
+                    }
+                }).addTo(map);
+            });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
-        renderCapabilities();
+        fetch('data.json')
+            .then(r => r.json())
+            .then(data => {
+                productsData = data;
+                renderCapabilities();
+            });
     });
     </script>
 </body>
