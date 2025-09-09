@@ -2,37 +2,23 @@
   "capabilities": [
     {
       "name": "Capability 1",
-      "subCapabilities": [
-        {
-          "name": "Subcapability 1",
-          "productsByCountry": {
-            "France": ["Produit A", "Produit B"],
-            "Germany": ["Produit B"],
-            "Spain": ["Produit C"]
-          }
-        },
-        {
-          "name": "Subcapability 2",
-          "productsByCountry": {
-            "France": ["Produit D"],
-            "Italy": ["Produit E"]
-          }
-        },
-        {
-          "name": "Subcapability 3",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcapability 4",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcapability 5",
-          "productsByCountry": {}
-        }
-      ]
+      
+    },
+    {
+      "name": "Capability 3",
+      
+    },
+    {
+      "name": "Capability 4",
+    
+    },
+    {
+      "name": "Capability 5",
+    
+    },
+    {
+      "name": "Capability 6",
+      
     }
-    // Ajoute les autres capabilities ici
   ]
-
 }
