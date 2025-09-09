@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "capabilities": [
     {
@@ -63,70 +62,4 @@
     }
     // Ajoute 4 autres capabilities selon ton besoin
   ]
-=======
-{
-  "capabilities": [
-    {
-      "name": "Capability 1",
-      "subCapabilities": [
-        {
-          "name": "Subcap 1",
-          "productsByCountry": {
-            "France": ["Produit A", "Produit B"],
-            "Germany": ["Produit B"],
-            "Spain": ["Produit C"]
-          }
-        },
-        {
-          "name": "Subcap 2",
-          "productsByCountry": {
-            "France": ["Produit D"],
-            "Italy": ["Produit E"]
-          }
-        },
-        {
-          "name": "Subcap 3",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 4",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 5",
-          "productsByCountry": {}
-        }
-      ]
-    },
-    {
-      "name": "Capability 2",
-      "subCapabilities": [
-        {
-          "name": "Subcap 1",
-          "productsByCountry": {
-            "France": ["Produit F"],
-            "Germany": ["Produit G"]
-          }
-        },
-        {
-          "name": "Subcap 2",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 3",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 4",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 5",
-          "productsByCountry": {}
-        }
-      ]
-    }
-    // Ajoute 4 autres capabilities selon ton besoin
-  ]
->>>>>>> 38474f385630d292aa10bc25d64755210b2b2c7d
 }
