@@ -50,3 +50,9 @@
     // Ajoute les autres capabilities et subcapabilities
   }
 }
+fetch('data.json')
+    .then(r => r.json())
+    .then(data => {
+        capabilitiesData = data.capabilities;
+        renderCapabilities();
+    });
