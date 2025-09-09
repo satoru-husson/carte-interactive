@@ -4,7 +4,7 @@
       "name": "Capability 1",
       "subCapabilities": [
         {
-          "name": "Subcap 1",
+          "name": "Subcapability 1",
           "productsByCountry": {
             "France": ["Produit A", "Produit B"],
             "Germany": ["Produit B"],
@@ -12,22 +12,22 @@
           }
         },
         {
-          "name": "Subcap 2",
+          "name": "Subcapability 2",
           "productsByCountry": {
             "France": ["Produit D"],
             "Italy": ["Produit E"]
           }
         },
         {
-          "name": "Subcap 3",
+          "name": "Subcapability 3",
           "productsByCountry": {}
         },
         {
-          "name": "Subcap 4",
+          "name": "Subcapability 4",
           "productsByCountry": {}
         },
         {
-          "name": "Subcap 5",
+          "name": "Subcapability 5",
           "productsByCountry": {}
         }
       ]
