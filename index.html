@@ -2,8 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Carte Interactive</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <title>Capabilities</title>
     <style>
         body { display: flex; }
         #sidebar { width: 18%; padding: 20px; }
@@ -31,6 +30,8 @@
             border: 1px solid #aaa;
             cursor: pointer;
         }
+        .btn { margin: 5px; padding: 10px 20px; cursor: pointer; }
+        #l2-buttons { margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -39,6 +40,7 @@
         <div id="capabilities-container"></div>
     </div>
     <div id="map"></div>
+    <div id="l2-buttons"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
