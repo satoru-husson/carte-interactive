@@ -31,34 +31,6 @@
           "productsByCountry": {}
         }
       ]
-    },
-    {
-      "name": "Capability 2",
-      "subCapabilities": [
-        {
-          "name": "Subcap 1",
-          "productsByCountry": {
-            "France": ["Produit F"],
-            "Germany": ["Produit G"]
-          }
-        },
-        {
-          "name": "Subcap 2",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 3",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 4",
-          "productsByCountry": {}
-        },
-        {
-          "name": "Subcap 5",
-          "productsByCountry": {}
-        }
-      ]
     }
     // Ajoute les autres capabilities ici
   ],
@@ -73,16 +45,6 @@
         "France": ["Produit D"],
         "Italy": ["Produit E"]
       },
-      "Subcap 3": {},
-      "Subcap 4": {},
-      "Subcap 5": {}
-    },
-    "Capability 2": {
-      "Subcap 1": {
-        "France": ["Produit F"],
-        "Germany": ["Produit G"]
-      },
-      "Subcap 2": {},
       "Subcap 3": {},
       "Subcap 4": {},
       "Subcap 5": {}
