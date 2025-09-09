@@ -62,31 +62,4 @@
     }
     // Ajoute les autres capabilities ici
   ],
-  "productsBySubcapability": {
-    "Capability 1": {
-      "Subcap 1": {
-        "France": ["Produit A", "Produit B"],
-        "Germany": ["Produit B"],
-        "Spain": ["Produit C"]
-      },
-      "Subcap 2": {
-        "France": ["Produit D"],
-        "Italy": ["Produit E"]
-      },
-      "Subcap 3": {},
-      "Subcap 4": {},
-      "Subcap 5": {}
-    },
-    "Capability 2": {
-      "Subcap 1": {
-        "France": ["Produit F"],
-        "Germany": ["Produit G"]
-      },
-      "Subcap 2": {},
-      "Subcap 3": {},
-      "Subcap 4": {},
-      "Subcap 5": {}
-    }
-    // Ajoute les autres capabilities et subcapabilities
-  }
-}
+  "productsBySubcapability": {    "Capability 1": {      "Subcap 1": {        "France": ["Produit A", "Produit B"],        "Germany": ["Produit B"],        "Spain": ["Produit C"]      },      "Subcap 2": {        "France": ["Produit D"],        "Italy": ["Produit E"]      },      "Subcap 3": {},      "Subcap 4": {},      "Subcap 5": {}    },    "Capability 2": {      "Subcap 1": {        "France": ["Produit F"],        "Germany": ["Produit G"]      },      "Subcap 2": {},      "Subcap 3": {},      "Subcap 4": {},      "Subcap 5": {}    }    // Ajoute les autres capabilities et subcapabilities  }}
