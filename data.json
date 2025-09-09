@@ -1,22 +1,53 @@
 {
   "capabilities": [
     {
-      "name": "Capability 1"
+      "name": "Capability 1",
+      "l2": [
+        { "name": "L2-1" },
+        { "name": "L2-2" },
+        { "name": "L2-3" },
+        { "name": "L2-4" },
+        { "name": "L2-5" }
+      ]
     },
     {
-      "name": "Capability 2"
+      "name": "Capability 2",
+      "l2": [
+        { "name": "L2-1" },
+        { "name": "L2-2" },
+        { "name": "L2-3" },
+        { "name": "L2-4" },
+        { "name": "L2-5" }
+      ]
     },
     {
-      "name": "Capability 3"
+      "name": "Capability 3",
+      "l2": [
+        { "name": "L2-1" },
+        { "name": "L2-2" },
+        { "name": "L2-3" },
+        { "name": "L2-4" },
+        { "name": "L2-5" }
+      ]
     },
     {
-      "name": "Capability 4"
+      "name": "Capability 4",
+      "l2": [
+        { "name": "L2-1" },
+        { "name": "L2-2" },
+        { "name": "L2-3" },
+        { "name": "L2-4" },
+        { "name": "L2-5" }
+      ]
     },
     {
-      "name": "Capability 5"
-    },
-    {
-      "name": "Capability 6"
+      "name": "Capability 5",
+      "l2": [
+        { "name": "L2-1" },
+        { "name": "L2-2" },
+        { "name": "L2-3" },
+        { "name": "L2-4" },
+        { "name": "L2-5" }
+      ]
     }
-  ]
-}
+    
