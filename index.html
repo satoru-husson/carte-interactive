@@ -50,61 +50,61 @@
         {
             name: "Capability 1",
             subCapabilities: [
-                { name: "Subcap 1", products: ["Produit A", "Produit B"] },
-                { name: "Subcap 2", products: ["Produit C"] },
-                { name: "Subcap 3", products: [] },
-                { name: "Subcap 4", products: [] },
-                { name: "Subcap 5", products: [] }
+                "Subcap 1",
+                "Subcap 2",
+                "Subcap 3",
+                "Subcap 4",
+                "Subcap 5"
             ]
         },
         {
             name: "Capability 2",
             subCapabilities: [
-                { name: "Subcap 1", products: [] },
-                { name: "Subcap 2", products: [] },
-                { name: "Subcap 3", products: [] },
-                { name: "Subcap 4", products: [] },
-                { name: "Subcap 5", products: [] }
+                "Subcap 1",
+                "Subcap 2",
+                "Subcap 3",
+                "Subcap 4",
+                "Subcap 5"
             ]
         },
         {
             name: "Capability 3",
             subCapabilities: [
-                { name: "Subcap 1", products: [] },
-                { name: "Subcap 2", products: [] },
-                { name: "Subcap 3", products: [] },
-                { name: "Subcap 4", products: [] },
-                { name: "Subcap 5", products: [] }
+                "Subcap 1",
+                "Subcap 2",
+                "Subcap 3",
+                "Subcap 4",
+                "Subcap 5"
             ]
         },
         {
             name: "Capability 4",
             subCapabilities: [
-                { name: "Subcap 1", products: [] },
-                { name: "Subcap 2", products: [] },
-                { name: "Subcap 3", products: [] },
-                { name: "Subcap 4", products: [] },
-                { name: "Subcap 5", products: [] }
+                "Subcap 1",
+                "Subcap 2",
+                "Subcap 3",
+                "Subcap 4",
+                "Subcap 5"
             ]
         },
         {
             name: "Capability 5",
             subCapabilities: [
-                { name: "Subcap 1", products: [] },
-                { name: "Subcap 2", products: [] },
-                { name: "Subcap 3", products: [] },
-                { name: "Subcap 4", products: [] },
-                { name: "Subcap 5", products: [] }
+                "Subcap 1",
+                "Subcap 2",
+                "Subcap 3",
+                "Subcap 4",
+                "Subcap 5"
             ]
         },
         {
             name: "Capability 6",
             subCapabilities: [
-                { name: "Subcap 1", products: [] },
-                { name: "Subcap 2", products: [] },
-                { name: "Subcap 3", products: [] },
-                { name: "Subcap 4", products: [] },
-                { name: "Subcap 5", products: [] }
+                "Subcap 1",
+                "Subcap 2",
+                "Subcap 3",
+                "Subcap 4",
+                "Subcap 5"
             ]
         }
     ];
@@ -128,10 +128,10 @@
             if (selectedCapability === i) {
                 cap.subCapabilities.forEach((sub, j) => {
                     const subBtn = document.createElement('button');
-                    subBtn.textContent = sub.name;
+                    subBtn.textContent = sub;
                     subBtn.className = 'sub-cap-btn';
                     subBtn.onclick = () => {
-                        showCountriesForSubcapability(cap.name, sub.name);
+                        showCountriesForSubcapability(cap.name, sub);
                     };
                     container.appendChild(subBtn);
                 });
