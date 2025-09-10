@@ -98,7 +98,7 @@
 }).addTo(map);
 
                 marker.on('click', function () {
-    // Liste unique des items
+    // Liste unique des items pour la L1/L2 sélectionnée
     const uniqueItems = [];
     const seen = new Set();
     filtered.forEach(item => {
@@ -108,34 +108,48 @@
         }
     });
 
+    // POPUP : noms des items ligne par ligne
+    const popupHtml = `<b>${country}</b><br>` +
+        uniqueItems.map(item => `<div>${item.name}</div>`).join('');
+    L.popup()
+        .setLatLng(center)
+        .setContent(popupHtml)
+        .openOn(map);
+
+    // Liste de tous les items du pays (indépendamment de L1/L2), rangés par catégorie
+    let allItems = [];
+    Object.values(l1TreeData).forEach(l2s => {
+        Object.values(l2s).forEach(arr => {
+            allItems = allItems.concat(arr);
+        });
+    });
+
+    // Filtre et dédoublonne par nom
+    const countryItems = [];
+    const seenNames = new Set();
+    allItems.forEach(item => {
+        if (item.countries && item.countries.includes(country) && !seenNames.has(item.name)) {
+            countryItems.push(item);
+            seenNames.add(item.name);
+        }
+    });
+
     // Groupe les items par catégorie
     const grouped = {};
-    uniqueItems.forEach(item => {
+    countryItems.forEach(item => {
         const cat = item.category || "Autre";
         if (!grouped[cat]) grouped[cat] = [];
         grouped[cat].push(item.name);
     });
 
-    // Palette de couleurs
-    const categoryColors = {
-        "TMS": "#1976d2",
-        "Route Optimization": "#388e3c",
-        "Track and Trace": "#d32f2f",
-        "Quotation": "#fbc02d",
-        "Autre": "#616161"
-    };
-
-    // Génère le HTML
-    let html = `<h4 style="margin-bottom:10px;">Applications pour ${country}</h4>`;
+    let html = `<h4 style="margin-bottom:10px;">Toutes les applications pour ${country}</h4>`;
     Object.keys(grouped).forEach(cat => {
-        if (grouped[cat].length > 0) {
-            const color = categoryColors[cat] || "#333";
-            html += `<div style="margin-bottom:10px;">
-                <span style="font-weight:bold; color:${color};">${cat}</span><br>
-                ${grouped[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
-            </div>`;
-        }
+        html += `<div style="margin-bottom:10px;">
+            <span style="font-weight:bold;">${cat}</span><br>
+            ${grouped[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
+        </div>`;
     });
+    html += `<div style="height: 10px;"></div>`;
 
     // Affiche dans le panneau info en bas de la sidebar
     let infoPanel = document.getElementById('info-panel');
