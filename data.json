@@ -1,50 +1,58 @@
 [
   {
-    "name": "Order Management",
+    "name": "Ines",
     "l1": "Order Management",
-    "l2": "1.4 Create and Manage Accounts and Contacts",
-    "countries": ["France", "Germany"]
+    "l2": "Create and Manage Accounts and Contacts",
+    "countries": ["France", "Germany"],
+    "category": "Quotation"
   },
   {
-    "name": "Order Management",
+    "name": "Ines",
     "l1": "Order Management",
-    "l2": "1.5 Provide Proposal and Quotes",
-    "countries": ["France"]
+    "l2": "Provide Proposal and Quotes",
+    "countries": ["France"],
+    "category": "Quotation"
   },
   {
-    "name": "Order Management",
+    "name": "Ines",
     "l1": "Order Management",
-    "l2": "1.6 Convert Prospect to Customer",
-    "countries": ["Belgium", "Spain"]
+    "l2": "Convert Prospect to Customer",
+    "countries": ["Belgium", "Spain"],
+    "category": "Quotation"
   },
   {
     "name": "Transport Management",
     "l1": "Transport Management",
     "l2": "Planning",
-    "countries": ["Spain", "Italy"]
+    "countries": ["Spain", "Italy"],
+    "category": "TMS"
   },
   {
     "name": "Carrier Management",
     "l1": "Carrier Management",
     "l2": "Contract",
-    "countries": ["Belgium"]
+    "countries": ["Belgium"],
+    "category": "TMS"
   },
   {
     "name": "Asset & Network Management",
     "l1": "Asset & Network Management",
     "l2": "Maintenance",
-    "countries": ["France", "Switzerland"]
+    "countries": ["France", "Switzerland"],
+    "category": "Track and Trace"
   },
   {
     "name": "From Offering to Pricing",
     "l1": "From Offering to Pricing",
     "l2": "Pricing",
-    "countries": ["Germany", "Austria"]
+    "countries": ["Germany", "Austria"],
+    "category": "Quotation"
   },
   {
     "name": "Finance Management",
     "l1": "Finance Management",
     "l2": "Billing",
-    "countries": ["France", "Luxembourg"]
+    "countries": ["France", "Luxembourg"],
+    "category": "Route Optimization"
   }
 ]

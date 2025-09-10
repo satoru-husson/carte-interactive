@@ -2,106 +2,55 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Carte Interactive</title>
+    <title>Carte Interactive Minimaliste</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
-    body { height: 100vh; width: 100vw; }
-    #map-container { position: relative; height: 100vh; width: 100vw; }
-    #map { height: 100vh; width: 100vw; }
-    #sidebar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 320px;
-        min-width: 220px;
-        max-width: 400px;
-        padding: 20px 10px 20px 20px;
-        background: rgba(250,250,250,0.97);
-        overflow-y: auto;
-        z-index: 1100;
-        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-    }
-    #sidebar h3 {
-        margin-top: 0;
-        margin-bottom: 16px;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #1a237e;
-    }
-    ul.arbo {
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0;
-    }
-    .l1-li {
-        margin-bottom: 10px;
-    }
-    .l1-div {
-        cursor: pointer;
-        font-weight: bold;
-        color: #1a237e;
-        padding: 8px 0;
-        transition: background 0.2s;
-        border-radius: 4px;
-    }
-    .l1-div:hover {
-        background: #e3e6f5;
-    }
-    ul.l2-list {
-        list-style-type: circle;
-        margin-left: 24px;
-        margin-top: 6px;
-        margin-bottom: 6px;
-        padding-left: 0;
-    }
-    .l2-li {
-        cursor: pointer;
-        padding: 6px 0;
-        color: #0d133d;
-        border-radius: 4px;
-        transition: background 0.2s;
-    }
-    .l2-li:hover {
-        background: #e3e6f5;
-    }
-    .country-count-icon {
-        pointer-events: none;
-    }
+        html, body { height: 100%; margin: 0; padding: 0; }
+        body { height: 100vh; width: 100vw; }
+        #sidebar {
+            position: absolute;
+            top: 0; left: 0;
+            height: 100vh;
+            width: 18vw;
+            background: #f7f7f7;
+            overflow-y: auto;
+            z-index: 1100;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.07);
+            padding: 20px 10px 20px 20px;
+        }
+        #sidebar h3 { margin-top: 0; color: #1a237e; }
+        ul.arbo { list-style-type: none; padding-left: 0; margin: 0; }
+        .l1-li { margin-bottom: 10px; }
+        .l1-div { cursor: pointer; font-weight: bold; color: #1a237e; padding: 8px 0; border-radius: 4px; }
+        .l1-div:hover, .l2-li:hover { background: #e3e6f5; }
+        ul.l2-list { list-style-type: circle; margin-left: 24px; margin-top: 6px; margin-bottom: 6px; padding-left: 0; }
+        .l2-li { cursor: pointer; padding: 6px 0; color: #0d133d; border-radius: 4px; }
+        #map {
+            position: absolute;
+            top: 0; left: 18vw; right: 0; bottom: 0;
+            width: 82vw;
+            height: 100vh;
+        }
     </style>
 </head>
 <body>
-    <div id="map-container">
-        <div id="map"></div>
-        <div id="sidebar">
-            <h3>Arborescence L1</h3>
-            <ul id="l1-tree" class="arbo"></ul>
-        </div>
+    <div id="sidebar">
+        <h3>Arborescence L1</h3>
+        <ul id="l1-tree" class="arbo"></ul>
     </div>
-
+    <div id="map"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script type="module">
-        import { showCountryCounts } from './countryCounts.js';
         import { countries } from './countriesList.js';
 
+        let l1TreeData = {};
+        let expanded = {};
+        let countryMarkers = [];
         const map = L.map('map').setView([20, 0], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Stockage des layers de pays
-        const countryLayers = {};
-
-        // Variables pour stocker la L1/L2 sélectionnée
-        let selectedL1 = null;
-        let selectedL2 = null;
-
-        // Arborescence dynamique depuis data.json
-        let l1TreeData = {};
-        let expanded = {};
-
-        // Regroupe les données par L1 puis L2
         function buildTree(data) {
             const tree = {};
             data.forEach(item => {
@@ -112,63 +61,140 @@
             return tree;
         }
 
+        function showCountryMarkers(items) {
+            // Retire les anciens markers
+            countryMarkers.forEach(marker => map.removeLayer(marker));
+            countryMarkers = [];
+
+            countries.forEach(countryObj => {
+                const country = countryObj.name;
+                const center = countryObj.center;
+                // Filtre les items correspondant au pays
+                const filtered = items.filter(item => item.countries && item.countries.includes(country));
+                if (filtered.length === 0) return;
+
+                const marker = L.marker(center, {
+    icon: L.divIcon({
+        className: 'country-count-icon',
+        html: `<div style="
+            background: #388e3c;
+            color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            cursor: pointer;
+        ">${filtered.length}</div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 16]
+    }),
+    interactive: true
+}).addTo(map);
+
+                marker.on('click', function () {
+    // Liste unique des items
+    const uniqueItems = [];
+    const seen = new Set();
+    filtered.forEach(item => {
+        if (!seen.has(item.name)) {
+            uniqueItems.push(item);
+            seen.add(item.name);
+        }
+    });
+
+    // Groupe les items par catégorie
+    const grouped = {};
+    uniqueItems.forEach(item => {
+        const cat = item.category || "Autre";
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(item.name);
+    });
+
+    // Palette de couleurs
+    const categoryColors = {
+        "TMS": "#1976d2",
+        "Route Optimization": "#388e3c",
+        "Track and Trace": "#d32f2f",
+        "Quotation": "#fbc02d",
+        "Autre": "#616161"
+    };
+
+    // Génère le HTML
+    let html = `<h4 style="margin-bottom:10px;">Applications pour ${country}</h4>`;
+    Object.keys(grouped).forEach(cat => {
+        if (grouped[cat].length > 0) {
+            const color = categoryColors[cat] || "#333";
+            html += `<div style="margin-bottom:10px;">
+                <span style="font-weight:bold; color:${color};">${cat}</span><br>
+                ${grouped[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
+            </div>`;
+        }
+    });
+
+    // Affiche dans le panneau info en bas de la sidebar
+    let infoPanel = document.getElementById('info-panel');
+    if (!infoPanel) {
+        infoPanel = document.createElement('div');
+        infoPanel.id = 'info-panel';
+        infoPanel.style.maxHeight = '40vh';
+        infoPanel.style.overflowY = 'auto';
+        infoPanel.style.marginTop = '20px';
+        document.getElementById('sidebar').appendChild(infoPanel);
+    }
+    infoPanel.innerHTML = html;
+});
+
+                countryMarkers.push(marker);
+            });
+        }
+
         function renderL1Tree() {
             const treeElem = document.getElementById('l1-tree');
             treeElem.innerHTML = '';
-
-            // Liste fixe des L1
-            const l1Names = [
-                "Order Management",
-                "Transport Management",
-                "Carrier Management",
-                "Asset & Network Management",
-                "From Offering to Pricing",
-                "Finance Management"
-            ];
-
-            l1Names.forEach((l1, i) => {
-                if (!l1TreeData[l1]) return; // Ignore si pas de données pour ce L1
-
+            const l1Keys = Object.keys(l1TreeData);
+            l1Keys.forEach(l1 => {
                 const li = document.createElement('li');
                 li.className = 'l1-li';
 
                 const l1Div = document.createElement('div');
                 l1Div.className = 'l1-div';
-                l1Div.textContent = (expanded[l1] ? '▼ ' : '► ') + (i + 1) + '. ' + l1;
+                l1Div.textContent = (expanded[l1] ? '▼ ' : '► ') + l1;
                 l1Div.onclick = () => {
                     expanded[l1] = !expanded[l1];
                     renderL1Tree();
+                    // Affiche les markers pour tous les items de la L1
+                    let items = [];
+                    Object.values(l1TreeData[l1]).forEach(l2Items => {
+                        items = items.concat(l2Items);
+                    });
+                    showCountryMarkers(items);
                 };
                 li.appendChild(l1Div);
 
                 if (expanded[l1]) {
                     const l2List = document.createElement('ul');
                     l2List.className = 'l2-list';
-
                     const l2Keys = Object.keys(l1TreeData[l1]);
                     l2Keys.forEach((l2, j) => {
                         const l2li = document.createElement('li');
                         l2li.className = 'l2-li';
-                        l2li.textContent = (i + 1) + '.' + (j + 1) + ' ' + l2;
+                        l2li.textContent = l2;
                         l2li.onclick = (e) => {
                             e.stopPropagation();
-                            showCountriesPopup(l1, l2);
+                            showCountryMarkers(l1TreeData[l1][l2]);
                         };
                         l2List.appendChild(l2li);
                     });
-
                     li.appendChild(l2List);
                 }
-
                 treeElem.appendChild(li);
             });
-        }
-
-        // Modifie la fonction showCountriesPopup pour mémoriser la sélection
-        function showCountriesPopup(l1, l2) {
-            selectedL1 = l1;
-            selectedL2 = l2;
-            showCountryCounts(map, l1TreeData, l1, l2);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -178,47 +204,8 @@
                     l1TreeData = buildTree(data);
                     Object.keys(l1TreeData).forEach(l1 => expanded[l1] = false);
                     renderL1Tree();
-
-                    // Charge le GeoJSON des pays APRÈS avoir les données
-                    fetch('countries.geojson')
-                        .then(response => response.json())
-                        .then(geoData => {
-                            L.geoJSON(geoData, {
-                                style: {
-                                    color: "#3388ff",
-                                    weight: 1,
-                                    fillOpacity: 0.2
-                                },
-                                onEachFeature: function (feature, layer) {
-                                    if (feature.properties && feature.properties.ADMIN) {
-                                        countryLayers[feature.properties.ADMIN] = layer;
-                                        layer.on('click', function () {
-                                            if (!selectedL1 || !selectedL2) return;
-                                            const items = l1TreeData[selectedL1][selectedL2] || [];
-                                            const filtered = items.filter(item => item.countries && item.countries.includes(feature.properties.ADMIN));
-                                            if (filtered.length === 0) {
-                                                L.popup()
-                                                    .setLatLng(layer.getBounds().getCenter())
-                                                    .setContent(`<b>${feature.properties.ADMIN}</b><br>Aucun item`)
-                                                    .openOn(map);
-                                            } else {
-                                                const content = filtered.map(item => item.name).join('<br>');
-                                                L.popup()
-                                                    .setLatLng(layer.getBounds().getCenter())
-                                                    .setContent(`<b>${feature.properties.ADMIN}</b><br>${content}`)
-                                                    .openOn(map);
-                                            }
-                                        });
-                                    }
-                                }
-                            }).addTo(map);
-                        });
                 });
         });
     </script>
 </body>
 </html>
-
-
-
-
