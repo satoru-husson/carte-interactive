@@ -34,5 +34,47 @@
     "l1": "IT",
     "l2": "Infrastructure",
     "countries": ["France", "Allemagne"]
+  },
+  {
+    "name": "Order Management",
+    "l1": "Order Management",
+    "l2": "Recrutement",
+    "countries": ["France", "Germany"]
+  },
+  {
+    "name": "Order Management",
+    "l1": "Order Management",
+    "l2": "Validation",
+    "countries": ["France"]
+  },
+  {
+    "name": "Transport Management",
+    "l1": "Transport Management",
+    "l2": "Planning",
+    "countries": ["Spain", "Italy"]
+  },
+  {
+    "name": "Carrier Management",
+    "l1": "Carrier Management",
+    "l2": "Contract",
+    "countries": ["Belgium"]
+  },
+  {
+    "name": "Asset & Network Management",
+    "l1": "Asset & Network Management",
+    "l2": "Maintenance",
+    "countries": ["France", "Switzerland"]
+  },
+  {
+    "name": "From Offering to Pricing",
+    "l1": "From Offering to Pricing",
+    "l2": "Pricing",
+    "countries": ["Germany", "Austria"]
+  },
+  {
+    "name": "Finance Management",
+    "l1": "Finance Management",
+    "l2": "Billing",
+    "countries": ["France", "Luxembourg"]
   }
 ]
