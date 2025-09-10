@@ -83,34 +83,13 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script type="module">
         import { showCountryCounts } from './countryCounts.js';
+        import { countries } from './countriesList.js';
 
         // Carte Leaflet
         const map = L.map('map').setView([20, 0], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
-
-        // Ajoute cette variable globale pour stocker les layers des pays
-        const countryLayers = {};
-
-        // Modifie le chargement du GeoJSON :
-        fetch('countries.geojson')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    style: {
-                        color: "#3388ff",
-                        weight: 1,
-                        fillOpacity: 0.2
-                    },
-                    onEachFeature: function (feature, layer) {
-                        layer.bindPopup(feature.properties.ADMIN || "Pays");
-                        // Stocke le layer par nom de pays
-                        countryLayers[feature.properties.ADMIN] = layer;
-                    }
-                }).addTo(map);
-            })
-            .catch(err => { alert("Impossible de charger countries.geojson"); });
 
         // Arborescence dynamique depuis data.json
         let l1TreeData = {};
@@ -131,8 +110,19 @@
             const treeElem = document.getElementById('l1-tree');
             treeElem.innerHTML = '';
 
-            const l1Keys = Object.keys(l1TreeData);
-            l1Keys.forEach((l1, i) => {
+            // Liste fixe des L1
+            const l1Names = [
+                "Order Management",
+                "Transport Management",
+                "Carrier Management",
+                "Asset & Network Management",
+                "From Offering to Pricing",
+                "Finance Management"
+            ];
+
+            l1Names.forEach((l1, i) => {
+                if (!l1TreeData[l1]) return; // Ignore si pas de données pour ce L1
+
                 const li = document.createElement('li');
                 li.className = 'l1-li';
 
@@ -168,11 +158,8 @@
             });
         }
 
-        // Liste des marqueurs pour pouvoir les retirer
-        let countryMarkers = [];
-
         function showCountriesPopup(l1, l2) {
-            showCountryCounts(map, l1TreeData, l1, l2, countryLayers);
+            showCountryCounts(map, l1TreeData, l1, l2);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -184,8 +171,6 @@
                     renderL1Tree();
                 });
         });
-
-        
     </script>
 </body>
 </html>

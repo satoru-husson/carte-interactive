@@ -1,4 +1,6 @@
-export function showCountryCounts(map, l1TreeData, l1, l2, countryLayers) {
+import { countries } from './countriesList.js';
+
+export function showCountryCounts(map, l1TreeData, l1, l2) {
     // Retire les anciens marqueurs
     if (!map._countryMarkers) map._countryMarkers = [];
     map._countryMarkers.forEach(marker => map.removeLayer(marker));
@@ -8,16 +10,16 @@ export function showCountryCounts(map, l1TreeData, l1, l2, countryLayers) {
     const items = l1TreeData[l1][l2];
     if (!items) return;
 
-    // Pour chaque pays dans countryLayers
-    Object.keys(countryLayers).forEach(country => {
+    // Pour chaque pays de la liste
+    countries.forEach(countryObj => {
+        const country = countryObj.name;
+        const center = countryObj.center;
+
         // Calcule le nombre d'items pour ce pays
         const count = items.filter(item => item.countries && item.countries.includes(country)).length;
 
         // N'affiche rien si le nombre est 0
         if (count === 0) return;
-
-        // Centre géographique du pays
-        const center = countryLayers[country].getBounds().getCenter();
 
         // Crée un marker avec le nombre
         const marker = L.marker(center, {
