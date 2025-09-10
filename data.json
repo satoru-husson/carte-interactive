@@ -36,9 +36,3 @@
     "countries": ["France", "Allemagne"]
   }
 ]
-
-<style>
-.country-count-icon {
-    pointer-events: none;
-}
-</style>
