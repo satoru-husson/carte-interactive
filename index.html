@@ -2,100 +2,198 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Capabilities</title>
+    <title>Carte Interactive</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <style>
-        body { display: flex; }
-        #sidebar { width: 18%; padding: 20px; }
-        #map { height: 800px; width: 82%; margin-bottom: 20px; }
-        .cap-btn {
-            display: block;
-            width: 100%;
-            margin-bottom: 8px;
-            padding: 8px;
-            font-weight: bold;
-            background: #f0f0f0;
-            border: 1px solid #3388ff;
-            cursor: pointer;
-        }
-        .cap-btn.active {
-            background: #3388ff;
-            color: #fff;
-        }
-        .sub-cap-btn {
-            display: block;
-            width: 95%;
-            margin: 5px 0 5px 10px;
-            padding: 6px;
-            background: #e0e0e0;
-            border: 1px solid #aaa;
-            cursor: pointer;
-        }
-        .btn { margin: 5px; padding: 10px 20px; cursor: pointer; }
-        #l2-buttons { margin-top: 20px; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body { height: 100vh; width: 100vw; }
+    #map-container { position: relative; height: 100vh; width: 100vw; }
+    #map { height: 100vh; width: 100vw; }
+    #sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 320px;
+        min-width: 220px;
+        max-width: 400px;
+        padding: 20px 10px 20px 20px;
+        background: rgba(250,250,250,0.97);
+        overflow-y: auto;
+        z-index: 1100;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    }
+    #sidebar h3 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #1a237e;
+    }
+    ul.arbo {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    .l1-li {
+        margin-bottom: 10px;
+    }
+    .l1-div {
+        cursor: pointer;
+        font-weight: bold;
+        color: #1a237e;
+        padding: 8px 0;
+        transition: background 0.2s;
+        border-radius: 4px;
+    }
+    .l1-div:hover {
+        background: #e3e6f5;
+    }
+    ul.l2-list {
+        list-style-type: circle;
+        margin-left: 24px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        padding-left: 0;
+    }
+    .l2-li {
+        cursor: pointer;
+        padding: 6px 0;
+        color: #0d133d;
+        border-radius: 4px;
+        transition: background 0.2s;
+    }
+    .l2-li:hover {
+        background: #e3e6f5;
+    }
     </style>
 </head>
 <body>
-    <div id="sidebar">
-        <h2>Capabilities</h2>
-        <div id="capabilities-container"></div>
+    <div id="map-container">
+        <div id="map"></div>
+        <div id="sidebar">
+            <h3>Arborescence L1</h3>
+            <ul id="l1-tree" class="arbo"></ul>
+        </div>
     </div>
-    <div id="map"></div>
-    <div id="l2-buttons"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-    // Initialisation de la carte centrée sur le monde
-    const map = L.map('map').setView([20, 0], 2);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+    <script type="module">
+        // Carte Leaflet
+        const map = L.map('map').setView([20, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
 
-    // Chargement du GeoJSON des pays
-    fetch('countries.geojson')
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                style: {
-                    color: "#3388ff",
-                    weight: 1,
-                    fillOpacity: 0.2
-                },
-                onEachFeature: function (feature, layer) {
-                    layer.bindPopup(feature.properties.ADMIN || "Pays");
-                }
-            }).addTo(map);
-        })
-        .catch(err => { alert("Impossible de charger countries.geojson"); });
-
-    let capabilitiesData = [];
-    let selectedCapability = null;
-
-    function renderCapabilities() {
-    const container = document.getElementById('capabilities-container');
-    container.innerHTML = '';
-
-    capabilitiesData.forEach((cap, i) => {
-        const capBtn = document.createElement('button');
-        capBtn.textContent = cap.name;
-        capBtn.className = 'cap-btn' + (selectedCapability === i ? ' active' : '');
-        capBtn.onclick = () => {
-            selectedCapability = (selectedCapability === i) ? null : i;
-            alert(`Capability sélectionnée : ${cap.name}`);
-            renderCapabilities();
-        };
-        container.appendChild(capBtn);
-    });
-}
-
-
-    window.addEventListener('DOMContentLoaded', () => {
-        fetch('data.json')
-            .then(r => r.json())
+        fetch('countries.geojson')
+            .then(response => response.json())
             .then(data => {
-                capabilitiesData = data.capabilities;
-                renderCapabilities();
+                L.geoJSON(data, {
+                    style: {
+                        color: "#3388ff",
+                        weight: 1,
+                        fillOpacity: 0.2
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup(feature.properties.ADMIN || "Pays");
+                    }
+                }).addTo(map);
+            })
+            .catch(err => { alert("Impossible de charger countries.geojson"); });
+
+        // Arborescence dynamique depuis data.json
+        let l1TreeData = {};
+        let expanded = {};
+
+        // Regroupe les données par L1 puis L2
+        function buildTree(data) {
+            const tree = {};
+            data.forEach(item => {
+                if (!tree[item.l1]) tree[item.l1] = {};
+                if (!tree[item.l1][item.l2]) tree[item.l1][item.l2] = [];
+                tree[item.l1][item.l2].push(item);
             });
-    });
+            return tree;
+        }
+
+        function renderL1Tree() {
+            const treeElem = document.getElementById('l1-tree');
+            treeElem.innerHTML = '';
+
+            const l1Keys = Object.keys(l1TreeData);
+            l1Keys.forEach((l1, i) => {
+                const li = document.createElement('li');
+                li.className = 'l1-li';
+
+                const l1Div = document.createElement('div');
+                l1Div.className = 'l1-div';
+                l1Div.textContent = (expanded[l1] ? '▼ ' : '► ') + (i + 1) + '. ' + l1;
+                l1Div.onclick = () => {
+                    expanded[l1] = !expanded[l1];
+                    renderL1Tree();
+                };
+                li.appendChild(l1Div);
+
+                if (expanded[l1]) {
+                    const l2List = document.createElement('ul');
+                    l2List.className = 'l2-list';
+
+                    const l2Keys = Object.keys(l1TreeData[l1]);
+                    l2Keys.forEach((l2, j) => {
+                        const l2li = document.createElement('li');
+                        l2li.className = 'l2-li';
+                        l2li.textContent = (i + 1) + '.' + (j + 1) + ' ' + l2;
+                        l2li.onclick = (e) => {
+                            e.stopPropagation();
+                            showCountriesPopup(l1, l2);
+                        };
+                        l2List.appendChild(l2li);
+                    });
+
+                    li.appendChild(l2List);
+                }
+
+                treeElem.appendChild(li);
+            });
+        }
+
+        // Affiche une popup sur la carte pour chaque pays concerné par le L2 sélectionné
+        function showCountriesPopup(l1, l2) {
+            // Ferme toutes les popups existantes
+            map.closePopup();
+
+            // Récupère tous les items pour ce L1/L2
+            const items = l1TreeData[l1][l2];
+            if (!items) return;
+
+            items.forEach(item => {
+                item.countries.forEach(country => {
+                    // Recherche le layer du pays sur la carte
+                    map.eachLayer(layer => {
+                        if (layer.feature && layer.feature.properties && layer.feature.properties.ADMIN === country) {
+                            // Affiche une popup avec le nom des items pour ce pays
+                            const itemsForCountry = items
+                                .filter(it => it.countries.includes(country))
+                                .map(it => it.name)
+                                .join(', ');
+                            layer.bindPopup(
+                                `<b>${country}</b><br>Items : ${itemsForCountry}`
+                            ).openPopup();
+                        }
+                    });
+                });
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('data.json')
+                .then(r => r.json())
+                .then(data => {
+                    l1TreeData = buildTree(data);
+                    Object.keys(l1TreeData).forEach(l1 => expanded[l1] = false);
+                    renderL1Tree();
+                });
+        });
     </script>
 </body>
 </html>
