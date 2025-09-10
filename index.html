@@ -97,42 +97,6 @@
         let selectedL1 = null;
         let selectedL2 = null;
 
-        fetch('countries.geojson')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    style: {
-                        color: "#3388ff",
-                        weight: 1,
-                        fillOpacity: 0.2
-                    },
-                    onEachFeature: function (feature, layer) {
-                        if (feature.properties && feature.properties.ADMIN) {
-                            countryLayers[feature.properties.ADMIN] = layer;
-                            // Ajoute un popup sur chaque pays
-                            layer.on('click', function () {
-                                if (!selectedL1 || !selectedL2) return; // rien si aucune L2 sélectionnée
-                                const items = l1TreeData[selectedL1][selectedL2] || [];
-                                // Filtre les items pour ce pays
-                                const filtered = items.filter(item => item.countries && item.countries.includes(feature.properties.ADMIN));
-                                if (filtered.length === 0) {
-                                    L.popup()
-                                        .setLatLng(layer.getBounds().getCenter())
-                                        .setContent(`<b>${feature.properties.ADMIN}</b><br>Aucun item`)
-                                        .openOn(map);
-                                } else {
-                                    const content = filtered.map(item => item.name).join('<br>');
-                                    L.popup()
-                                        .setLatLng(layer.getBounds().getCenter())
-                                        .setContent(`<b>${feature.properties.ADMIN}</b><br>${content}`)
-                                        .openOn(map);
-                                }
-                            });
-                        }
-                    }
-                }).addTo(map);
-            });
-
         // Arborescence dynamique depuis data.json
         let l1TreeData = {};
         let expanded = {};
@@ -214,6 +178,41 @@
                     l1TreeData = buildTree(data);
                     Object.keys(l1TreeData).forEach(l1 => expanded[l1] = false);
                     renderL1Tree();
+
+                    // Charge le GeoJSON des pays APRÈS avoir les données
+                    fetch('countries.geojson')
+                        .then(response => response.json())
+                        .then(geoData => {
+                            L.geoJSON(geoData, {
+                                style: {
+                                    color: "#3388ff",
+                                    weight: 1,
+                                    fillOpacity: 0.2
+                                },
+                                onEachFeature: function (feature, layer) {
+                                    if (feature.properties && feature.properties.ADMIN) {
+                                        countryLayers[feature.properties.ADMIN] = layer;
+                                        layer.on('click', function () {
+                                            if (!selectedL1 || !selectedL2) return;
+                                            const items = l1TreeData[selectedL1][selectedL2] || [];
+                                            const filtered = items.filter(item => item.countries && item.countries.includes(feature.properties.ADMIN));
+                                            if (filtered.length === 0) {
+                                                L.popup()
+                                                    .setLatLng(layer.getBounds().getCenter())
+                                                    .setContent(`<b>${feature.properties.ADMIN}</b><br>Aucun item`)
+                                                    .openOn(map);
+                                            } else {
+                                                const content = filtered.map(item => item.name).join('<br>');
+                                                L.popup()
+                                                    .setLatLng(layer.getBounds().getCenter())
+                                                    .setContent(`<b>${feature.properties.ADMIN}</b><br>${content}`)
+                                                    .openOn(map);
+                                            }
+                                        });
+                                    }
+                                }
+                            }).addTo(map);
+                        });
                 });
         });
     </script>
