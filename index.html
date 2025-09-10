@@ -89,28 +89,6 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
-        // Ajoute ce code juste après l'initialisation de la carte
-        const franceCenter = [46.603354, 1.888334]; // Latitude/Longitude approximatif du centre de la France
-
-const franceMarker = L.marker(franceCenter, {
-    icon: L.divIcon({
-        className: 'country-count-icon',
-        html: `<div style="
-            background: #1a237e;
-            color: white;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1em;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        ">20</div>`
-    })
-}).addTo(map);
 
         // Ajoute cette variable globale pour stocker les layers des pays
         const countryLayers = {};
