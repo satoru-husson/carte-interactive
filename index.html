@@ -88,6 +88,10 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
+        // Ajoute cette variable globale pour stocker les layers des pays
+        const countryLayers = {};
+
+        // Modifie le chargement du GeoJSON :
         fetch('countries.geojson')
             .then(response => response.json())
             .then(data => {
@@ -99,6 +103,8 @@
                     },
                     onEachFeature: function (feature, layer) {
                         layer.bindPopup(feature.properties.ADMIN || "Pays");
+                        // Stocke le layer par nom de pays
+                        countryLayers[feature.properties.ADMIN] = layer;
                     }
                 }).addTo(map);
             })
@@ -179,39 +185,37 @@
             });
 
             countriesSet.forEach(country => {
-                // Recherche le layer du pays sur la carte
-                map.eachLayer(layer => {
-                    if (layer.feature && layer.feature.properties && layer.feature.properties.ADMIN === country) {
-                        // Calcule le nombre d'items pour ce pays
-                        const count = items.filter(it => it.countries.includes(country)).length;
-                        // Centre géométrique du pays
-                        const center = layer.getBounds().getCenter();
+                // Utilise le layer stocké pour ce pays
+                const layer = countryLayers[country];
+                if (layer) {
+                    // Calcule le nombre d'items pour ce pays
+                    const count = items.filter(it => it.countries.includes(country)).length;
+                    // Centre géométrique du pays
+                    const center = layer.getBounds().getCenter();
 
-                        // Crée un marker avec le nombre
-                        const marker = L.marker(center, {
-                            icon: L.divIcon({
-                                className: 'country-count-icon',
-                                html: `<div style="
-                                    background: #1a237e;
-                                    color: white;
-                                    border-radius: 50%;
-                                    width: 32px;
-                                    height: 32px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    font-weight: bold;
-                                    font-size: 1.1em;
-                                    border: 2px solid #fff;
-                                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-                                ">${count}</div>`
-                            })
-                        }).addTo(map);
+                    // Crée un marker avec le nombre
+                    const marker = L.marker(center, {
+                        icon: L.divIcon({
+                            className: 'country-count-icon',
+                            html: `<div style="
+                                background: #1a237e;
+                                color: white;
+                                border-radius: 50%;
+                                width: 32px;
+                                height: 32px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-weight: bold;
+                                font-size: 1.1em;
+                                border: 2px solid #fff;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                            ">${count}</div>`
+                        })
+                    }).addTo(map);
 
-                        // Ajoute le marker à la liste
-                        countryMarkers.push(marker);
-                    }
-                });
+                    countryMarkers.push(marker);
+                }
             });
         }
 
