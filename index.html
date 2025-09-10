@@ -85,11 +85,38 @@
         import { showCountryCounts } from './countryCounts.js';
         import { countries } from './countriesList.js';
 
-        // Carte Leaflet
         const map = L.map('map').setView([20, 0], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
+
+        // Stockage des layers de pays
+        const countryLayers = {};
+
+        fetch('countries.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: {
+                        color: "#3388ff",
+                        weight: 1,
+                        fillOpacity: 0.2
+                    },
+                    onEachFeature: function (feature, layer) {
+                        // Stocke le layer par nom de pays
+                        if (feature.properties && feature.properties.ADMIN) {
+                            countryLayers[feature.properties.ADMIN] = layer;
+                            // Ajoute un popup sur chaque pays
+                            layer.on('click', function () {
+                                L.popup()
+                                    .setLatLng(layer.getBounds().getCenter())
+                                    .setContent(`<b>${feature.properties.ADMIN}</b>`)
+                                    .openOn(map);
+                            });
+                        }
+                    }
+                }).addTo(map);
+            });
 
         // Arborescence dynamique depuis data.json
         let l1TreeData = {};
@@ -159,7 +186,18 @@
         }
 
         function showCountriesPopup(l1, l2) {
-            showCountryCounts(map, l1TreeData, l1, l2);
+            // Récupère tous les items pour ce L1/L2
+            const items = l1TreeData[l1][l2];
+            if (!items || items.length === 0) return;
+
+            // Construit le contenu du popup : chaque nom sur une ligne
+            const content = items.map(item => item.name).join('<br>');
+
+            // Affiche le popup au centre de la carte
+            L.popup()
+                .setLatLng(map.getCenter())
+                .setContent(`<b>Items pour "${l2}"</b><br>${content}`)
+                .openOn(map);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
