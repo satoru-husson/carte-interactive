@@ -1,51 +1,21 @@
 [
   {
-    "name": "SAP ERP",
-    "l1": "Finance",
-    "l2": "Comptabilité",
-    "countries": ["France", "Allemagne", "Italie"]
-  },
-  {
-    "name": "Oracle ERP",
-    "l1": "Finance",
-    "l2": "Comptabilité",
-    "countries": ["USA"]
-  },
-  {
-    "name": "AuditToolX",
-    "l1": "Finance",
-    "l2": "Audit",
-    "countries": ["USA", "Canada", "Mexique"]
-  },
-  {
-    "name": "HR Suite",
-    "l1": "RH",
-    "l2": "Recrutement",
-    "countries": ["Espagne", "Italie"]
-  },
-  {
-    "name": "TrainingApp",
-    "l1": "RH",
-    "l2": "Formation",
-    "countries": ["Italie"]
-  },
-  {
-    "name": "InfraMonitor",
-    "l1": "IT",
-    "l2": "Infrastructure",
-    "countries": ["France", "Allemagne"]
-  },
-  {
     "name": "Order Management",
     "l1": "Order Management",
-    "l2": "Recrutement",
+    "l2": "1.4 Create and Manage Accounts and Contacts",
     "countries": ["France", "Germany"]
   },
   {
     "name": "Order Management",
     "l1": "Order Management",
-    "l2": "Validation",
+    "l2": "1.5 Provide Proposal and Quotes",
     "countries": ["France"]
+  },
+  {
+    "name": "Order Management",
+    "l1": "Order Management",
+    "l2": "1.6 Convert Prospect to Customer",
+    "countries": ["Belgium", "Spain"]
   },
   {
     "name": "Transport Management",
