@@ -558,14 +558,22 @@
     "category": "Financial & Settlement Systems"
   },
   {
-    "name": "INES",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier",
-    "countries": [
-      "France"
-    ],
-    "category": "Transport Management Systems (TMS)"
-  },
+  "name": "INES",
+  "l1": [
+    "Transport Management",
+    "Logistics Planning"
+  ],
+  "l2": [
+    "Manage Booking with Carrier",
+    "Track Shipment"
+  ],
+  "countries": [
+    "France",
+    "Germany"
+  ],
+  "category": "Transport Management Systems (TMS)"
+},
+
   {
     "name": "INSPECTO",
     "l1": "Transport Management",
