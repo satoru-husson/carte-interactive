@@ -45,9 +45,7 @@
   },
   {
     "name": "ACTUATE",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Financial & Settlement Systems",
     "l1": "Transport Management",
     "l2": "Manage Performance for Customers"
@@ -79,36 +77,28 @@
   },
   {
     "name": "B2P",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Freight Marketplaces & Tendering",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
   {
     "name": "Bearwear",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Collaboration & Project Management",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
   {
     "name": "Brazil Logic",
-    "countries": [
-      "Brazil"
-    ],
+    "countries": ["Brazil"],
     "category": "Track & Trace",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
   {
     "name": "Byzaneo",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "Integration & Middleware",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
@@ -122,36 +112,28 @@
   },
   {
     "name": "Canada reporting",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Data",
     "l1": "Transport Management",
     "l2": "Manage Performance for Customers"
   },
   {
     "name": "Canada scanning",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
   {
     "name": "Canada Shipping System",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Fulfillment & Shipping",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
   {
     "name": "Canada track",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
@@ -168,18 +150,14 @@
   },
   {
     "name": "Centiro (CLL)",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Integration & Middleware",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
   {
     "name": "CEVA IOD",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Track & Trace",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
@@ -213,9 +191,7 @@
   },
   {
     "name": "CEVA YMS",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
@@ -240,9 +216,7 @@
   },
   {
     "name": "CEVASSETS (BEXTER Trackonline)",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
@@ -267,9 +241,7 @@
   },
   {
     "name": "Chronotruck",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Sales & Marketing",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -285,9 +257,7 @@
   },
   {
     "name": "CMS",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -367,9 +337,7 @@
   },
   {
     "name": "DC BRAIN",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
@@ -423,9 +391,7 @@
   },
   {
     "name": "EDICOM iPaaS",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Application",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
@@ -506,9 +472,7 @@
   },
   {
     "name": "Gefcopack",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Asset & Fleet Management",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
@@ -524,18 +488,14 @@
   },
   {
     "name": "Geoserver",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Collaboration & Project Management",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
   },
   {
     "name": "GLT",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Transport Management Systems (TMS)",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -579,39 +539,7 @@
   },
   {
     "name": "INES",
-        "countries": [
-      "Greece",
-      "Morocco",
-      "Belgium",
-      "Netherlands",
-      "Luxembourg",
-      "Austria",
-      "Poland",
-      "Czech Republic",
-      "Slovakia",
-      "Hungary",
-      "Romania",
-      "Bulgaria",
-      "Croatia",
-      "Serbia",
-      "Slovenia",
-      "Latvia",
-      "Lithuania",
-      "Germany",
-      "France",
-      "Spain",
-      "Italy",
-      "Sweden",
-      "Norway",
-      "Finland",
-      "United Kingdom",
-      "Ireland",
-      "Turkey",
-      "Switzerland",
-      "Portugal",
-      "Tunisia",
-      "Denmark"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Transport Management Systems (TMS)",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -682,9 +610,7 @@
   },
   {
     "name": "Map&Guide",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
@@ -772,9 +698,7 @@
   },
   {
     "name": "Metis",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -889,33 +813,7 @@
   },
   {
     "name": "OMS 3PL (PFS)",
-    "countries": [
-      "Austria",
-      "Bulgaria",
-      "Croatia",
-      "Czech Republic",
-      "France",
-      "Germany",
-      "Greece",
-      "Hungary",
-      "Italy",
-      "Latvia",
-      "Lithuania",
-      "Morocco",
-      "Netherlands",
-      "Poland",
-      "Portugal",
-      "Romania",
-      "Serbia",
-      "Slovakia",
-      "Slovenia",
-      "Spain",
-      "Sweden",
-      "Switzerland",
-      "Tunisia",
-      "Turkey",
-      "UK"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "CRM/PFS",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
@@ -931,9 +829,7 @@
   },
   {
     "name": "Oplus",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -1022,9 +918,7 @@
   },
   {
     "name": "Panoptes (Ex Neopost)",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
@@ -1086,7 +980,7 @@
   },
   {
     "name": "Project 44 (Ground)",
-    "countriesRef": "Raal Trans",
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
@@ -1122,82 +1016,18 @@
   },
   {
     "name": "PTV Xserver",
-    "countries": [
-      "Greece",
-      "Morocco",
-      "Belgium",
-      "Netherlands",
-      "Luxembourg",
-      "Germany",
-      "France",
-      "Spain",
-      "Portugal",
-      "Italy",
-      "Denmark",
-      "Finland",
-      "Iceland",
-      "Norway",
-      "Sweden",
-      "UK",
-      "Ireland",
-      "Turkey",
-      "Slovakia",
-      "Switzerland",
-      "Bulgaria",
-      "Croatia",
-      "Hungary",
-      "Latvia",
-      "Romania",
-      "Serbia",
-      "Slovenia",
-      "Czech Republic",
-      "Tunisia",
-      "Austria",
-      "Poland"
-  ],
-  "category": "Track & Trace",
-  "l1": "Transport Management",
-  "l2": "Manage Terminal and Transit Facility Operations"
+    "countriesRef": "ASTAG GU (Ground)",
+    "category": "Track & Trace",
+    "l1": "Transport Management",
+    "l2": "Manage Terminal and Transit Facility Operations"
   },
   
   { 
    "name": "Raal Trans",
-   "countries": [
-      "Greece",
-      "Morocco",
-      "Belgium",
-      "Netherlands",
-      "Luxembourg",
-      "Germany",
-      "France",
-      "Spain",
-      "Portugal",
-      "Italy",
-      "Denmark",
-      "Finland",
-      "Iceland",
-      "Norway",
-      "Sweden",
-      "United Kingdom",
-      "Ireland",
-      "Turkey",
-      "Slovakia",
-      "Switzerland",
-      "Bulgaria",
-      "Croatia",
-      "Hungary",
-      "Latvia",
-      "Romania",
-      "Serbia",
-      "Slovenia",
-      "Czech Republic",
-      "Tunisia",
-      "Austria",
-      "Poland"    
-  ],
-  "category": "Freight Marketplaces & Tendering",
-  "l1": "Transport Management",
-  "l2": "Manage Booking with Carrier"
+   "countriesRef": "ASTAG GU (Ground)",
+   "category": "Freight Marketplaces & Tendering",
+   "l1": "Transport Management",
+   "l2": "Manage Booking with Carrier"
   },
   {
 
@@ -1275,9 +1105,7 @@
   },
   {
     "name": "Sherlock Waste",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Collaboration & Project Management",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
@@ -1340,40 +1168,7 @@
   },
   {
     "name": "Speed TMS",
-    "countries": [
-      "France",
-      "Greece",
-      "Morocco",
-      "Belgium",
-      "Netherlands",
-      "Luxembourg",
-      "Germany",
-      "France",
-      "Spain",
-      "Portugal",
-      "Italy",
-      "Denmark",
-      "Finland",
-      "Iceland",
-      "Norway",
-      "Sweden",
-      "United Kingdom",
-      "Ireland",
-      "Turkey",
-      "Slovakia",
-      "Switzerland",
-      "Bulgaria",
-      "Croatia",
-      "Hungary",
-      "Latvia",
-      "Romania",
-      "Serbia",
-      "Slovenia",
-      "Czech Republic",
-      "Tunisia",
-      "Austria",
-      "Poland"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -1470,9 +1265,7 @@
   },
   {
     "name": "Timocom",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -1498,9 +1291,7 @@
   },
   {
     "name": "TOSCA",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Integration & Middleware",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
@@ -1570,9 +1361,7 @@
   },
   {
     "name": "Upply",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Transport Management Systems (TMS)",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
@@ -1588,34 +1377,7 @@
   },
   {
     "name": "Vision +",
-    "countries": [
-      "Austria",
-      "Belgium",
-      "Bulgaria",
-      "Croatia",
-      "Czech Republic",
-      "France",
-      "Germany",
-      "Greece",
-      "Hungary",
-      "Italy",
-      "Latvia",
-      "Lithuania",
-      "Morocco",
-      "Netherlands",
-      "Poland",
-      "Portugal",
-      "Romania",
-      "Serbia",
-      "Slovakia",
-      "Slovenia",
-      "Spain",
-      "Sweden",
-      "Switzerland",
-      "Tunisia",
-      "Turkey",
-      "UK"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
@@ -1640,9 +1402,7 @@
   },
   {
     "name": "Winroute",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Route & Load Optimization",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
@@ -1658,33 +1418,7 @@
   },
   {
     "name": "Xcargo",
-    "countries": [
-      "Austria",
-      "Bulgaria",
-      "Croatia",
-      "Czech Republic",
-      "France",
-      "Germany",
-      "Greece",
-      "Hungary",
-      "Italy",
-      "Latvia",
-      "Lithuania",
-      "Morocco",
-      "Netherlands",
-      "Poland",
-      "Portugal",
-      "Romania",
-      "Serbia",
-      "Slovakia",
-      "Slovenia",
-      "Spain",
-      "Sweden",
-      "Switzerland",
-      "Tunisia",
-      "Turkey",
-      "UK"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
@@ -1700,39 +1434,7 @@
   },
   {
     "name": "XPlanis xGU",
-    "countries": [
-      "Greece",
-      "Morocco",
-      "Belgium",
-      "Netherlands",
-      "Luxembourg",
-      "Germany",
-      "France",
-      "Spain",
-      "Portugal",
-      "Italy",
-      "Denmark",
-      "Finland",
-      "Iceland",
-      "Norway",
-      "Sweden",
-      "United Kingdom",
-      "Ireland",
-      "Turkey",
-      "Slovakia",
-      "Switzerland",
-      "Bulgaria",
-      "Croatia",
-      "Hungary",
-      "Latvia",
-      "Romania",
-      "Serbia",
-      "Slovenia",
-      "Czech Republic",
-      "Tunisia",
-      "Austria",
-      "Poland"
-    ],
+    "countriesRef": "ASTAG GU (Ground)",
     "category": "Financial & Settlement Systems",
     "l1": "Transport Management",
     "l2": "Manage Customs Clearance & Regulatory Requirements"
