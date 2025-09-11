@@ -31,6 +31,12 @@
             width: 82vw;
             height: 100vh;
         }
+        .selected {
+    background: #e3e6f5;
+    font-weight: bold;
+    color: #1a237e;
+    border-radius: 4px;
+}
     </style>
 </head>
 <body>
@@ -46,6 +52,8 @@
         let l1TreeData = {};
         let expanded = {};
         let countryMarkers = [];
+        let selectedL1 = null;
+let selectedL2 = null;
         const map = L.map('map').setView([20, 0], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
@@ -54,9 +62,16 @@
         function buildTree(data) {
             const tree = {};
             data.forEach(item => {
-                if (!tree[item.l1]) tree[item.l1] = {};
-                if (!tree[item.l1][item.l2]) tree[item.l1][item.l2] = [];
-                tree[item.l1][item.l2].push(item);
+                // Gère l1 et l2 comme tableau ou string
+                const l1s = Array.isArray(item.l1) ? item.l1 : [item.l1];
+                const l2s = Array.isArray(item.l2) ? item.l2 : [item.l2];
+                l1s.forEach(l1 => {
+                    if (!tree[l1]) tree[l1] = {};
+                    l2s.forEach(l2 => {
+                        if (!tree[l1][l2]) tree[l1][l2] = [];
+                        tree[l1][l2].push(item);
+                    });
+                });
             });
             return tree;
         }
@@ -177,10 +192,12 @@
                 li.className = 'l1-li';
 
                 const l1Div = document.createElement('div');
-                l1Div.className = 'l1-div';
+                l1Div.className = 'l1-div' + (selectedL1 === l1 && !selectedL2 ? ' selected' : '');
                 l1Div.textContent = (expanded[l1] ? '▼ ' : '► ') + l1;
                 l1Div.onclick = () => {
                     expanded[l1] = !expanded[l1];
+                    selectedL1 = l1;
+                    selectedL2 = null;
                     renderL1Tree();
                     // Affiche les markers pour tous les items de la L1
                     let items = [];
@@ -197,10 +214,14 @@
                     const l2Keys = Object.keys(l1TreeData[l1]);
                     l2Keys.forEach((l2, j) => {
                         const l2li = document.createElement('li');
-                        l2li.className = 'l2-li';
+                        l2li.className = 'l2-li' + (selectedL1 === l1 && selectedL2 === l2 ? ' selected' : '');
                         l2li.textContent = l2;
                         l2li.onclick = (e) => {
                             e.stopPropagation();
+                            selectedL1 = l1;
+                            selectedL2 = l2;
+                            renderL1Tree();
+                            // Ajoute cette ligne pour actualiser les markers :
                             showCountryMarkers(l1TreeData[l1][l2]);
                         };
                         l2List.appendChild(l2li);
