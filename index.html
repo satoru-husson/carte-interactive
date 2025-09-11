@@ -123,15 +123,30 @@ let selectedL2 = null;
         }
     });
 
-    // POPUP : noms des items ligne par ligne
-    const popupHtml = `<b>${country}</b><br>` +
-        uniqueItems.map(item => `<div>${item.name}</div>`).join('');
+    // Groupe les items par catégorie
+    const grouped = {};
+    uniqueItems.forEach(item => {
+        const cat = item.category || "Autre";
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(item.name);
+    });
+
+    // POPUP : applications rangées par catégorie
+    let popupHtml = `<b>${country}</b><br>`;
+    Object.keys(grouped).forEach(cat => {
+        popupHtml += `<div style="margin-bottom:8px;">
+            <span style="font-weight:bold;">${cat}</span><br>
+            ${grouped[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
+        </div>`;
+    });
+
     L.popup()
         .setLatLng(center)
         .setContent(popupHtml)
         .openOn(map);
 
-    // Liste de tous les items du pays (indépendamment de L1/L2), rangés par catégorie
+    // --- Le reste de ton code pour la sidebar dynamique ---
+    // (inchangé)
     let allItems = [];
     Object.values(l1TreeData).forEach(l2s => {
         Object.values(l2s).forEach(arr => {
@@ -139,7 +154,6 @@ let selectedL2 = null;
         });
     });
 
-    // Filtre et dédoublonne par nom
     const countryItems = [];
     const seenNames = new Set();
     allItems.forEach(item => {
@@ -149,24 +163,22 @@ let selectedL2 = null;
         }
     });
 
-    // Groupe les items par catégorie
-    const grouped = {};
+    const groupedSidebar = {};
     countryItems.forEach(item => {
         const cat = item.category || "Autre";
-        if (!grouped[cat]) grouped[cat] = [];
-        grouped[cat].push(item.name);
+        if (!groupedSidebar[cat]) groupedSidebar[cat] = [];
+        groupedSidebar[cat].push(item.name);
     });
 
     let html = `<h4 style="margin-bottom:10px;">Toutes les applications pour ${country}</h4>`;
-    Object.keys(grouped).forEach(cat => {
+    Object.keys(groupedSidebar).forEach(cat => {
         html += `<div style="margin-bottom:10px;">
             <span style="font-weight:bold;">${cat}</span><br>
-            ${grouped[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
+            ${groupedSidebar[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
         </div>`;
     });
     html += `<div style="height: 10px;"></div>`;
 
-    // Affiche dans le panneau info en bas de la sidebar
     let infoPanel = document.getElementById('info-panel');
     if (!infoPanel) {
         infoPanel = document.createElement('div');
