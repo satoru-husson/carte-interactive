@@ -12,7 +12,32 @@
   {
     "name": "4flow",
     "countries": [
-      "France"
+      "Austria",
+      "Bulgaria",
+      "Croatia",
+      "Czech Republic",
+      "France",
+      "Germany",
+      "Greece",
+      "Hungary",
+      "Italy",
+      "Netherlands",
+      "Poland",
+      "Romania",
+      "Slovakia",
+      "Slovenia",
+      "Spain",
+      "Switzerland",
+      "United Kingdom",
+      "Sweden",
+      "Belgium",
+      "Estonia",
+      "Latvia",
+      "Lithuania",
+      "Denmark",
+      "Ireland",
+      "Portugal",
+      "Luxembourg"
     ],
     "category": "Integration & Middleware",
     "l1": "Transport Management",
@@ -33,24 +58,21 @@
       "Argentina",
       "Uruguay"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
   {
     "name": "Alpega",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
     "category": "Integration & Middleware",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
   {
     "name": "ASTAG GU (Ground)",
-    "countries": [
-      "France"
-    ],
+    "countriesRef": "4flow",
+    "countries": ["Morocco", "Tunisia", "Turkey"],
     "category": "Financial & Settlement Systems",
     "l1": "Transport Management",
     "l2": "Manage Customs Clearance & Regulatory Requirements"
@@ -93,10 +115,8 @@
   },
   {
     "name": "CADIS (R4)",
-    "countries": [
-      "France"
-    ],
-    "category": "Last Mile Distribution",
+    "countriesRef": "ASTAG GU (Ground)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -105,7 +125,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "Financial & Settlement Systems",
+    "category": "Data",
     "l1": "Transport Management",
     "l2": "Manage Performance for Customers"
   },
@@ -114,7 +134,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "Asset & Fleet Management",
+    "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -123,7 +143,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "YMS/Time Slot Management",
+    "category": "Fulfillment & Shipping",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -132,7 +152,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "WMS",
+    "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -142,7 +162,7 @@
       "Austria",
       "Germany"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -187,7 +207,7 @@
       "Spain",
       "italy"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Customer Service",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -196,7 +216,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "YMS/Time Slot Management",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
   },
@@ -205,7 +225,7 @@
     "countries": [
       "Slovakia"
     ],
-    "category": "CRM/PFS",
+    "category": "Customer Service",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -223,7 +243,7 @@
     "countries": [
       "France"
     ],
-    "category": "Asset & Fleet Management",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -250,7 +270,7 @@
     "countries": [
       "France"
     ],
-    "category": "Freight Marketplaces & Tendering",
+    "category": "Sales & Marketing",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -313,7 +333,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "WMS",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -332,7 +352,7 @@
     "countries": [
       "Turkey"
     ],
-    "category": "Track & Trace",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -350,7 +370,7 @@
     "countries": [
       "France"
     ],
-    "category": "Route & Load Optimization",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
   },
@@ -359,7 +379,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Track & Trace",
+    "category": "Application",
     "l1": "Transport Management",
     "l2": "Manage Customs Clearance & Regulatory Requirements"
   },
@@ -379,7 +399,7 @@
       "Portugal",
       "Spain"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -406,7 +426,7 @@
     "countries": [
       "France"
     ],
-    "category": "Integration & Middleware",
+    "category": "Application",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -471,7 +491,7 @@
     "countries": [
       "China"
     ],
-    "category": "Asset & Fleet Management",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -559,8 +579,38 @@
   },
   {
     "name": "INES",
-    "countries": [
-      "France"
+        "countries": [
+      "Greece",
+      "Morocco",
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Austria",
+      "Poland",
+      "Czech Republic",
+      "Slovakia",
+      "Hungary",
+      "Romania",
+      "Bulgaria",
+      "Croatia",
+      "Serbia",
+      "Slovenia",
+      "Latvia",
+      "Lithuania",
+      "Germany",
+      "France",
+      "Spain",
+      "Italy",
+      "Sweden",
+      "Norway",
+      "Finland",
+      "United Kingdom",
+      "Ireland",
+      "Turkey",
+      "Switzerland",
+      "Portugal",
+      "Tunisia",
+      "Denmark"
     ],
     "category": "Transport Management Systems (TMS)",
     "l1": "Transport Management",
@@ -644,7 +694,7 @@
     "countries": [
       "Netherlands"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -653,7 +703,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Financial & Settlement Systems",
+    "category": "Customer Service",
     "l1": "Transport Management",
     "l2": "Manage Customs Clearance & Regulatory Requirements"
   },
@@ -662,7 +712,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -671,7 +721,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Customer Service",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -680,7 +730,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -689,7 +739,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -698,7 +748,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -734,7 +784,7 @@
     "countries": [
       "UK"
     ],
-    "category": "Track & Trace",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
@@ -761,7 +811,7 @@
     "countries": [
       "Netherlands"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -770,7 +820,7 @@
     "countries": [
       "Netherlands"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -779,7 +829,7 @@
     "countries": [
       "France"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -797,7 +847,7 @@
     "countries": [
       "Italy"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -806,7 +856,7 @@
     "countries": [
       "Australia"
     ],
-    "category": "Track & Trace",
+    "category": "Transportation",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
@@ -824,7 +874,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "Integration & Middleware",
+    "category": "Fulfillment & Shipping",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
   },
@@ -875,7 +925,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -884,7 +934,7 @@
     "countries": [
       "France"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -893,7 +943,7 @@
     "countries": [
       "Saudi Arabia"
     ],
-    "category": "Track & Trace",
+    "category": "Data",
     "l1": "Transport Management",
     "l2": "Manage Performance for Customers"
   },
@@ -902,7 +952,7 @@
     "countries": [
       "Turkey"
     ],
-    "category": "Collaboration & Project Management",
+    "category": "Data",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -911,7 +961,7 @@
     "countries": [
       "Saudi Arabia"
     ],
-    "category": "Collaboration & Project Management",
+    "category": "Finance",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -920,7 +970,7 @@
     "countries": [
       "Saudi Arabia"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -929,7 +979,7 @@
     "countries": [
       "Saudi Arabia"
     ],
-    "category": "CRM/PFS",
+    "category": "Customer Service",
     "l1": "Order Management",
     "l2": "Create and Manage Accounts and Contacts"
   },
@@ -939,7 +989,7 @@
       "Australia",
       "New Zealand"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -1036,8 +1086,16 @@
   },
   {
     "name": "Project 44 (Ground)",
+    "countriesRef": "Raal Trans",
+    "category": "Track & Trace",
+    "l1": "Transport Management",
+    "l2": "Track Shipments and Equipment"
+  },
+  {
+    "name": "PTV OptiFlow",
     "countries": [
-      "France"
+      "Australia",
+      "New Zealand"
     ],
     "category": "Track & Trace",
     "l1": "Transport Management",
@@ -1049,7 +1107,7 @@
       "Australia",
       "New Zealand"
     ],
-    "category": "Route & Load Optimization",
+    "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Manage Terminal and Transit Facility Operations"
   },
@@ -1065,22 +1123,84 @@
   {
     "name": "PTV Xserver",
     "countries": [
-      "France"
-    ],
-    "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+      "Greece",
+      "Morocco",
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Germany",
+      "France",
+      "Spain",
+      "Portugal",
+      "Italy",
+      "Denmark",
+      "Finland",
+      "Iceland",
+      "Norway",
+      "Sweden",
+      "UK",
+      "Ireland",
+      "Turkey",
+      "Slovakia",
+      "Switzerland",
+      "Bulgaria",
+      "Croatia",
+      "Hungary",
+      "Latvia",
+      "Romania",
+      "Serbia",
+      "Slovenia",
+      "Czech Republic",
+      "Tunisia",
+      "Austria",
+      "Poland"
+  ],
+  "category": "Track & Trace",
+  "l1": "Transport Management",
+  "l2": "Manage Terminal and Transit Facility Operations"
+  },
+  
+  { 
+   "name": "Raal Trans",
+   "countries": [
+      "Greece",
+      "Morocco",
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Germany",
+      "France",
+      "Spain",
+      "Portugal",
+      "Italy",
+      "Denmark",
+      "Finland",
+      "Iceland",
+      "Norway",
+      "Sweden",
+      "United Kingdom",
+      "Ireland",
+      "Turkey",
+      "Slovakia",
+      "Switzerland",
+      "Bulgaria",
+      "Croatia",
+      "Hungary",
+      "Latvia",
+      "Romania",
+      "Serbia",
+      "Slovenia",
+      "Czech Republic",
+      "Tunisia",
+      "Austria",
+      "Poland"    
+  ],
+  "category": "Freight Marketplaces & Tendering",
+  "l1": "Transport Management",
+  "l2": "Manage Booking with Carrier"
   },
   {
-    "name": "Raal Trans",
-    "countries": [
-      "France"
-    ],
-    "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
-  },
-  {
+
     "name": "Rail-Flow",
     "countries": [
       "Germany"
@@ -1112,7 +1232,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Route & Load Optimization",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -1121,7 +1241,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Asset & Fleet Management",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
@@ -1167,7 +1287,7 @@
     "countries": [
       "Canada"
     ],
-    "category": "Track & Trace",
+    "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
@@ -1176,7 +1296,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Financial & Settlement Systems",
+    "category": "Passengers & Commodities",
     "l1": "Transport Management",
     "l2": "Manage Performance for Customers"
   },
@@ -1195,7 +1315,7 @@
       "Australia",
       "New Zealand"
     ],
-    "category": "Collaboration & Project Management",
+    "category": "Strategy & Planning",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -1221,9 +1341,40 @@
   {
     "name": "Speed TMS",
     "countries": [
-      "France"
+      "France",
+      "Greece",
+      "Morocco",
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Germany",
+      "France",
+      "Spain",
+      "Portugal",
+      "Italy",
+      "Denmark",
+      "Finland",
+      "Iceland",
+      "Norway",
+      "Sweden",
+      "United Kingdom",
+      "Ireland",
+      "Turkey",
+      "Slovakia",
+      "Switzerland",
+      "Bulgaria",
+      "Croatia",
+      "Hungary",
+      "Latvia",
+      "Romania",
+      "Serbia",
+      "Slovenia",
+      "Czech Republic",
+      "Tunisia",
+      "Austria",
+      "Poland"
     ],
-    "category": "Transport Management Systems (TMS)",
+    "category": "Manufacturing & Delivery",
     "l1": "Transport Management",
     "l2": "Manage Booking with Carrier"
   },
@@ -1232,7 +1383,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "WMS",
+    "category": "Manufacturing & DeliveryMS",
     "l1": "Transport Management",
     "l2": "Manage Pick-up and Delivery"
   },
@@ -1259,7 +1410,7 @@
     "countries": [
       "United States of America"
     ],
-    "category": "Track & Trace",
+    "category": "Routing & Scheduling",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
@@ -1413,7 +1564,7 @@
     "countries": [
       "France"
     ],
-    "category": "Integration & Middleware",
+    "category": "Application",
     "l1": "Order Management",
     "l2": "Configure and Capture Customer Order"
   },
@@ -1439,6 +1590,7 @@
     "name": "Vision +",
     "countries": [
       "Austria",
+      "Belgium",
       "Bulgaria",
       "Croatia",
       "Czech Republic",
@@ -1473,7 +1625,7 @@
     "countries": [
       "Australia"
     ],
-    "category": "Track & Trace",
+    "category": "Transportation",
     "l1": "Transport Management",
     "l2": "Track Shipments and Equipment"
   },
@@ -1549,7 +1701,37 @@
   {
     "name": "XPlanis xGU",
     "countries": [
-      "France"
+      "Greece",
+      "Morocco",
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Germany",
+      "France",
+      "Spain",
+      "Portugal",
+      "Italy",
+      "Denmark",
+      "Finland",
+      "Iceland",
+      "Norway",
+      "Sweden",
+      "United Kingdom",
+      "Ireland",
+      "Turkey",
+      "Slovakia",
+      "Switzerland",
+      "Bulgaria",
+      "Croatia",
+      "Hungary",
+      "Latvia",
+      "Romania",
+      "Serbia",
+      "Slovenia",
+      "Czech Republic",
+      "Tunisia",
+      "Austria",
+      "Poland"
     ],
     "category": "Financial & Settlement Systems",
     "l1": "Transport Management",

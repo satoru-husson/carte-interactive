@@ -43,6 +43,9 @@
     <div id="sidebar">
         <h3>Arborescence L1</h3>
         <ul id="l1-tree" class="arbo"></ul>
+        <div style="border-top: 3px solid #388e3c; margin: 18px 0 10px 0;"></div>
+        <div style="font-weight:bold; color:#388e3c; margin-bottom:8px;">Applications du pays sélectionné :</div>
+        <div id="info-panel" style="max-height: 40vh; overflow-y: auto; background:#f0f4ff; padding:10px; border-radius:6px;"></div>
     </div>
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -52,6 +55,7 @@
         let l1TreeData = {};
         let expanded = {};
         let countryMarkers = [];
+        let countryLayers = {}; // Pour stocker les couches Leaflet par pays
         let selectedL1 = null;
 let selectedL2 = null;
         const map = L.map('map').setView([20, 0], 2);
@@ -89,31 +93,31 @@ let selectedL2 = null;
                 if (filtered.length === 0) return;
 
                 const marker = L.marker(center, {
-    icon: L.divIcon({
-        className: 'country-count-icon',
-        html: `<div style="
-            background: #388e3c;
-            color: white;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1em;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            cursor: pointer;
-        ">${filtered.length}</div>`,
-        iconSize: [32, 32],
-        iconAnchor: [16, 16]
-    }),
-    interactive: true
-}).addTo(map);
+                    icon: L.divIcon({
+                        className: 'country-count-icon',
+                        html: `<div style="
+                            background: #388e3c;
+                            color: white;
+                            border-radius: 50%;
+                            width: 32px;
+                            height: 32px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            font-size: 1.1em;
+                            border: 2px solid #fff;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                            cursor: pointer;
+                        ">${filtered.length}</div>`,
+                        iconSize: [32, 32],
+                        iconAnchor: [16, 16]
+                    }),
+                    interactive: true
+                }).addTo(map);
 
                 marker.on('click', function () {
-    // Liste unique des items pour la L1/L2 sélectionnée
+                    // Liste unique des items pour la L1/L2 sélectionnée
     const uniqueItems = [];
     const seen = new Set();
     filtered.forEach(item => {
@@ -128,15 +132,17 @@ let selectedL2 = null;
     uniqueItems.forEach(item => {
         const cat = item.category || "Autre";
         if (!grouped[cat]) grouped[cat] = [];
-        grouped[cat].push(item.name);
+        grouped[cat].push(item);
     });
 
-    // POPUP : applications rangées par catégorie
+    // POPUP : applications rangées par catégorie, items cliquables
     let popupHtml = `<b>${country}</b><br>`;
     Object.keys(grouped).forEach(cat => {
         popupHtml += `<div style="margin-bottom:8px;">
             <span style="font-weight:bold;">${cat}</span><br>
-            ${grouped[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
+            ${grouped[cat].map(item =>
+                `<span class="popup-item" data-name="${item.name}" style="margin-left:10px; cursor:pointer; text-decoration:underline;">${item.name}</span>`
+            ).join('<br>')}
         </div>`;
     });
 
@@ -144,6 +150,49 @@ let selectedL2 = null;
         .setLatLng(center)
         .setContent(popupHtml)
         .openOn(map);
+
+    // Ajoute le handler ici, à chaque ouverture de popup
+    setTimeout(() => {
+        document.querySelectorAll('.popup-item').forEach(elem => {
+            elem.onclick = function() {
+                // Met en gras l'élément cliqué et retire le gras des autres
+                document.querySelectorAll('.popup-item').forEach(e => {
+                    e.style.fontWeight = (e === this) ? 'bold' : 'normal';
+                });
+
+                // Reset les couleurs des pays
+                resetCountryColors();
+
+                const itemName = this.getAttribute('data-name');
+                const item = uniqueItems.find(i => i.name === itemName);
+                if (!item || !item.countries) return;
+
+                // Colorie les pays de l'item en bleu
+                item.countries.forEach(countryName => {
+                    if (countryLayers[countryName]) {
+                        countryLayers[countryName].setStyle({
+                            fillColor: "#1976d2",
+                            fillOpacity: 0.5,
+                            color: "#1976d2",
+                            weight: 2
+                        });
+                    }
+                });
+
+                // Efface tous les markers sauf celui du pays initial
+                countryMarkers.forEach(marker => {
+                    const markerLatLng = marker.getLatLng();
+                    if (!(markerLatLng.lat === center[0] && markerLatLng.lng === center[1])) {
+                        map.removeLayer(marker);
+                    }
+                });
+                countryMarkers = countryMarkers.filter(marker => {
+                    const markerLatLng = marker.getLatLng();
+                    return markerLatLng.lat === center[0] && markerLatLng.lng === center[1];
+                });
+            };
+        });
+    }, 100);
 
     // --- Le reste de ton code pour la sidebar dynamique ---
     // (inchangé)
@@ -171,13 +220,15 @@ let selectedL2 = null;
     });
 
     let html = `<h4 style="margin-bottom:10px;">Toutes les applications pour ${country}</h4>`;
-    Object.keys(groupedSidebar).forEach(cat => {
-        html += `<div style="margin-bottom:10px;">
-            <span style="font-weight:bold;">${cat}</span><br>
-            ${groupedSidebar[cat].map(name => `<span style="margin-left:10px;">${name}</span>`).join('<br>')}
-        </div>`;
-    });
-    html += `<div style="height: 10px;"></div>`;
+Object.keys(groupedSidebar).forEach(cat => {
+    html += `<div style="margin-bottom:10px;">
+        <span style="font-weight:bold;">${cat}</span><br>
+        ${groupedSidebar[cat].map(name =>
+            `<span class="sidebar-item" data-name="${name}" style="margin-left:10px; cursor:pointer; text-decoration:underline;">${name}</span>`
+        ).join('<br>')}
+    </div>`;
+});
+html += `<div style="height: 10px;"></div>`;
 
     let infoPanel = document.getElementById('info-panel');
     if (!infoPanel) {
@@ -189,6 +240,34 @@ let selectedL2 = null;
         document.getElementById('sidebar').appendChild(infoPanel);
     }
     infoPanel.innerHTML = html;
+
+    infoPanel.querySelectorAll('.sidebar-item').forEach(elem => {
+        elem.onclick = function() {
+            const itemName = this.getAttribute('data-name');
+            // Met en gras l'élément cliqué et retire le gras des autres
+            infoPanel.querySelectorAll('.sidebar-item').forEach(e => {
+                e.style.fontWeight = (e === this) ? 'bold' : 'normal';
+            });
+
+            // Retrouve l'item dans countryItems
+            const item = countryItems.find(i => i.name === itemName);
+            if (!item || !item.countries) return;
+            resetCountryColors();
+            item.countries.forEach(countryName => {
+                if (countryLayers[countryName]) {
+                    countryLayers[countryName].setStyle({
+                        fillColor: "#1976d2",
+                        fillOpacity: 0.5,
+                        color: "#1976d2",
+                        weight: 2
+                    });
+                }
+            });
+            // Efface tous les markers
+            countryMarkers.forEach(marker => map.removeLayer(marker));
+            countryMarkers = [];
+        };
+    });
 });
 
                 countryMarkers.push(marker);
@@ -207,6 +286,7 @@ let selectedL2 = null;
                 l1Div.className = 'l1-div' + (selectedL1 === l1 && !selectedL2 ? ' selected' : '');
                 l1Div.textContent = (expanded[l1] ? '▼ ' : '► ') + l1;
                 l1Div.onclick = () => {
+                    resetCountryColors(); // <-- Ajout ici
                     expanded[l1] = !expanded[l1];
                     selectedL1 = l1;
                     selectedL2 = null;
@@ -230,10 +310,10 @@ let selectedL2 = null;
                         l2li.textContent = l2;
                         l2li.onclick = (e) => {
                             e.stopPropagation();
+                            resetCountryColors(); // <-- Ajout ici
                             selectedL1 = l1;
                             selectedL2 = l2;
                             renderL1Tree();
-                            // Ajoute cette ligne pour actualiser les markers :
                             showCountryMarkers(l1TreeData[l1][l2]);
                         };
                         l2List.appendChild(l2li);
@@ -248,11 +328,94 @@ let selectedL2 = null;
             fetch('data.json')
                 .then(r => r.json())
                 .then(data => {
+                    // Place le code ici, juste après le chargement du JSON
+                    data.forEach(app => {
+                        if (app.countriesRef) {
+                            const refApp = data.find(a => a.name === app.countriesRef);
+                            if (refApp && refApp.countries) {
+                                // Fusionne les pays de la référence et ceux de l'application (en évitant les doublons)
+                                app.countries = Array.from(new Set([
+                                    ...(refApp.countries),
+                                    ...(app.countries || [])
+                                ]));
+                            }
+                        }
+                    });
+
                     l1TreeData = buildTree(data);
                     Object.keys(l1TreeData).forEach(l1 => expanded[l1] = false);
                     renderL1Tree();
                 });
+
+                fetch('countries.geojson')
+    .then(r => r.json())
+    .then(geojson => {
+        L.geoJSON(geojson, {
+            style: {
+                color: "#888",
+                weight: 1,
+                fillOpacity: 0.1
+            },
+            onEachFeature: function (feature, layer) {
+                const name = feature.properties.ADMIN || feature.properties.name;
+                countryLayers[name] = layer;
+                layer.addTo(map); // Affiche tous les pays en gris clair
+            }
         });
+    });
+        });
+        setTimeout(() => {
+    document.querySelectorAll('.popup-item').forEach(elem => {
+        elem.onclick = function() {
+            // Met en gras l'élément cliqué et retire le gras des autres
+            document.querySelectorAll('.popup-item').forEach(e => {
+                e.style.fontWeight = (e === this) ? 'bold' : 'normal';
+            });
+
+            // Reset les couleurs des pays
+            resetCountryColors();
+
+            const itemName = this.getAttribute('data-name');
+            const item = uniqueItems.find(i => i.name === itemName);
+            if (!item || !item.countries) return;
+
+            // Colorie les pays de l'item en bleu
+            item.countries.forEach(countryName => {
+                if (countryLayers[countryName]) {
+                    countryLayers[countryName].setStyle({
+                        fillColor: "#1976d2",
+                        fillOpacity: 0.5,
+                        color: "#1976d2",
+                        weight: 2
+                    });
+                }
+            });
+
+            // Efface tous les markers sauf celui du pays initial
+            countryMarkers.forEach(marker => {
+                const markerLatLng = marker.getLatLng();
+                if (!(markerLatLng.lat === center[0] && markerLatLng.lng === center[1])) {
+                    map.removeLayer(marker);
+                }
+            });
+            countryMarkers = countryMarkers.filter(marker => {
+                const markerLatLng = marker.getLatLng();
+                return markerLatLng.lat === center[0] && markerLatLng.lng === center[1];
+            });
+        };
+    });
+}, 100);
+
+function resetCountryColors() {
+    Object.values(countryLayers).forEach(layer => {
+        layer.setStyle({
+            fillColor: "#888",
+            fillOpacity: 0.1,
+            color: "#888",
+            weight: 1
+        });
+    });
+}
     </script>
 </body>
 </html>
