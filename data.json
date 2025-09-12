@@ -6,8 +6,7 @@
       "New Zealand"
     ],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "4flow",
@@ -40,15 +39,13 @@
       "Luxembourg"
     ],
     "category": "Integration & Middleware",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "ACTUATE",
     "countries": ["United States of America"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["FM1"]
   },
   {
     "name": "ADT TMS",
@@ -57,86 +54,74 @@
       "Uruguay"
     ],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Alpega",
     "countriesRef": "4flow",
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "ASTAG GU (Ground)",
     "countriesRef": "4flow",
     "countries": ["Morocco", "Tunisia", "Turkey"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "B2P",
     "countries": ["France"],
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Bearwear",
     "countries": ["United States of America"],
     "category": "Collaboration & Project Management",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Brazil Logic",
     "countries": ["Brazil"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Byzaneo",
     "countries": ["Poland"],
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "CADIS (R4)",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Canada reporting",
     "countries": ["Canada"],
     "category": "Data",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "Canada scanning",
     "countries": ["Canada"],
     "category": "Routing & Scheduling",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Canada Shipping System",
     "countries": ["Canada"],
     "category": "Fulfillment & Shipping",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Canada track",
     "countries": ["Canada"],
     "category": "Routing & Scheduling",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Car-O",
@@ -145,22 +130,19 @@
       "Germany"
     ],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Centiro (CLL)",
     "countriesRef": "4flow",
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "CEVA IOD",
     "countries": ["Turkey"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "CEVA Smart",
@@ -172,8 +154,7 @@
       "Turkey"
     ],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "CEVA SPOT MODULE",
@@ -186,15 +167,13 @@
       "italy"
     ],
     "category": "Customer Service",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "CEVA YMS",
     "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "CEVACONNECT (PFS)",
@@ -202,8 +181,7 @@
       "Slovakia"
     ],
     "category": "Customer Service",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Cevalution",
@@ -211,40 +189,35 @@
       "Turkey"
     ],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "CEVASSETS (BEXTER Trackonline)",
     "countriesRef": "4flow",
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "CEVATrack mailing",
     "countries": [
-      "UK"
+      "United Kingdom"
     ],
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Cevatrack-Responsive",
     "countries": [
-      "UK"
+      "United Kingdom"
     ],
     "category": "CRM/PFS",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Chronotruck",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Sales & Marketing",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "ClaimOVL",
@@ -252,1200 +225,817 @@
       "Turkey"
     ],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Provide Customer Service"
+    "capabilities": ["TM6"]
   },
   {
     "name": "CMS",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "CNDApps",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Comdata",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Control Tower",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "C-Portal",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "CrossDock - iSeries",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "CUBE IQ",
-    "countries": [
-      "Argentina",
-      "Uruguay"
-    ],
+    "countries": ["Argentina", "Uruguay"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "DAGITIM",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Datascope DMS",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "YMS/Time Slot Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "DC BRAIN",
     "countriesRef": "4flow",
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "Descartes GLN (Ground)",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Application",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Digital Archieve",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Dispatch",
-    "countries": [
-      "France",
-      "Portugal",
-      "Spain"
-    ],
+    "countries": ["France", "Portugal", "Spain"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "DMS",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Docsweb",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Collaboration & Project Management",
-    "l1": "Transport Management",
-    "l2": "Provide Customer Service"
+    "capabilities": ["TM7"]
   },
   {
     "name": "EDICOM iPaaS",
     "countriesRef": "4flow",
     "category": "Application",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Ediel Portale Collaborativo",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "YMS/Time Slot Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "EGL Scan Executive",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "EGL Scan Shuttles",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "ELO ANZ",
-    "countries": [
-      "Australia",
-      "Germany",
-      "New Zealand"
-    ],
+    "countries": ["Australia", "Germany", "New Zealand"],
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Fleetwave",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Fleetzy",
-    "countries": [
-      "Saudi Arabia"
-    ],
+    "countries": ["Saudi Arabia"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "FM May",
-    "countries": [
-      "China"
-    ],
+    "countries": ["China"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Galactica",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Provide Customer Service"
+    "capabilities": ["TM7"]
   },
   {
     "name": "Gefcopack",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Genio",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Geoserver",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Collaboration & Project Management",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "GLT",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "GM Customs Webportal",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "GS1",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Home Delivery",
-    "countries": [
-      "Canada",
-      "United States of America"
-    ],
+    "countries": ["Canada", "United States of America"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Provide Customer Service"
+    "capabilities": ["TM7"]
   },
   {
     "name": "i2 replacement",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "INES",
     "countriesRef": "ASTAG GU (Ground)",
+    "excludeCountries": ["United Kingdom"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1","TM2","TM3","TM4","TM4","TM5","TM6","TM7","OM1","OM2","OM3","OM4","OM5"]
   },
   {
     "name": "INSPECTO",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Inter Site Journaling",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "Jasper Reports",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "LA",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Leopard",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Logistix",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "LOSCAM",
-    "countries": [
-      "Australia"
-    ],
+    "countries": ["Australia"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["CM1","CM2","CM3","CM4","CM5","CM6"]
   },
   {
     "name": "Map&Guide",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "Matrix EAI SCM",
-    "countries": [
-      "Netherlands"
-    ],
+    "countries": ["Netherlands"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Matrix FSS",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Customer Service",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Matrix SCI",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Matrix SCM",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Customer Service",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Matrix TMS",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1","TM2","TM3","OM1","OP1"]
   },
   {
     "name": "Matrix TMS - Core+",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Matrix TMS Mobile",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "MazdaEdi",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "MDC Smartphone app",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Last Mile Distribution",
-    "l1": "Transport Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Metis",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Microlise POD",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "MiQuest",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "MLC Connect",
-    "countries": [
-      "Saudi Arabia"
-    ],
+    "countries": ["Saudi Arabia"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "MPO eTMS",
-    "countries": [
-      "Netherlands"
-    ],
+    "countries": ["Netherlands"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "MPO SCOS",
-    "countries": [
-      "Netherlands"
-    ],
+    "countries": ["Netherlands"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "MPO SCOS France",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "MS Dynamics",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "MSN 2.0",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "My-Fleet",
-    "countries": [
-      "Australia"
-    ],
+    "countries": ["Australia"],
     "category": "Transportation",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Nike Scanning",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Nortam dimensioning",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Fulfillment & Shipping",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "Omprompt",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "OMS 3PL (PFS)",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "CRM/PFS",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "One Dispatch",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Oplus",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Routing & Scheduling",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Oracle - Analytics",
-    "countries": [
-      "Saudi Arabia"
-    ],
+    "countries": ["Saudi Arabia"],
     "category": "Data",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "Oracle BI Solutions",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Data",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Oracle-EBS",
-    "countries": [
-      "Saudi Arabia"
-    ],
+    "countries": ["Saudi Arabia"],
     "category": "Finance",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["FM1"]
   },
   {
     "name": "Oracle-OTM",
-    "countries": [
-      "Saudi Arabia"
-    ],
+    "countries": ["Saudi Arabia"],
     "category": "Manufacturing & Delivery",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Oracle-Siebel",
-    "countries": [
-      "Saudi Arabia"
-    ],
+    "countries": ["Saudi Arabia"],
     "category": "Customer Service",
-    "l1": "Order Management",
-    "l2": "Create and Manage Accounts and Contacts"
+    "capabilities": ["OM1"]
   },
   {
     "name": "ORION ANZ",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "ORION Brazil",
-    "countries": [
-      "Brazil"
-    ],
+    "countries": ["Brazil"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "ORS",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "OVL_INES_BATCH",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Integration & Middleware",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Panoptes (Ex Neopost)",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Paragon UKIN",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "PARTS",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "PathFind",
-    "countries": [
-      "Brazil"
-    ],
+    "countries": ["Brazil"],
     "category": "Route & Load Optimization",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "PC Miler",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "PCSTrac",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Collaboration & Project Management",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Piattaforma SMS",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Provide Customer Service"
+    "capabilities": ["TM7"]
   },
   {
     "name": "Project 44 (Ground)",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "PTV OptiFlow",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "PTV OptiFlow",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countries": ["Australia", "New Zealand"],
     "category": "Routing & Scheduling",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "PTV Route Optimizer",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Route & Load Optimization",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "PTV Xserver",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
-  },
-  
-  { 
-   "name": "Raal Trans",
-   "countriesRef": "ASTAG GU (Ground)",
-   "category": "Freight Marketplaces & Tendering",
-   "l1": "Transport Management",
-   "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM3"]
   },
   {
-
+    "name": "Raal Trans",
+    "countriesRef": "ASTAG GU (Ground)",
+    "category": "Freight Marketplaces & Tendering",
+    "capabilities": ["TM1"]
+  },
+  {
     "name": "Rail-Flow",
-    "countries": [
-      "Germany"
-    ],
+    "countries": ["Germany"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "REPOM",
-    "countries": [
-      "Brazil"
-    ],
+    "countries": ["Brazil"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "RO e-Transport",
-    "countries": [
-      "Romania"
-    ],
+    "countries": ["Romania"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "RouteMax",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Samsara MyFleet",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "SDS",
-    "countries": [
-      "France",
-      "Turkey"
-    ],
+    "countries": ["France", "Turkey"],
     "category": "Collaboration & Project Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Sertifi",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Provide Customer Service"
+    "capabilities": ["TM7"]
   },
   {
     "name": "Sharenet",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2","ANM1","ANM2","ANM3","ANM4"]
   },
   {
     "name": "Sherlock Waste",
     "countriesRef": "4flow",
     "category": "Collaboration & Project Management",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Ship track",
-    "countries": [
-      "Canada"
-    ],
+    "countries": ["Canada"],
     "category": "Routing & Scheduling",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Shiplify",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Passengers & Commodities",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "SHIPPER",
-    "countries": [
-      "Switzerland"
-    ],
+    "countries": ["Switzerland"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Smartsheet",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Strategy & Planning",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "SOTI MobiControl",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
-  },
-  {
-    "name": "Speditor.net",
-    "countries": [
-      "Austria"
-    ],
-    "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Speed TMS",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Manufacturing & Delivery",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "SphereWMS",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Manufacturing & DeliveryMS",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Stratagi",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Sub-It",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Surgere",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Routing & Scheduling",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Tarot Analytics",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom"],
     "category": "Last Mile Distribution",
-    "l1": "Transport Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "TC1GDO",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Teliae",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Teranalytics-Linehaul Scheduler",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Route & Load Optimization",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "Teranalytics-Station Gravity",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Performance for Customers"
+    "capabilities": ["TM6"]
   },
   {
     "name": "Time Slot Control (Ground)",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "YMS/Time Slot Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "Timocom",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1","OP1","OP2"]
   },
   {
     "name": "TMS Customer Web",
-    "countries": [
-      "Turkey"
-    ],
+    "countries": ["Turkey"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "TMS Portal",
-    "countries": [
-      "Australia",
-      "New Zealand"
-    ],
+    "countriesRef": "2IC Pallet",
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "TOSCA",
     "countriesRef": "4flow",
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Trans.eu",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "TransNET",
-    "countries": [
-      "UK"
-    ],
+    "countries": ["United Kingdom","Ireland","Belgium","Netherlands","Luxembourg"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Transporeon",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "TraspoJ",
-    "countries": [
-      "Italy"
-    ],
+    "countries": ["Italy"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Trucker Tools",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "TV Preview - API",
-    "countries": [
-      "Czech Republic"
-    ],
+    "countries": ["Czech Republic"],
     "category": "YMS/Time Slot Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["TM2"]
   },
   {
     "name": "UM",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Application",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "Upply",
     "countriesRef": "4flow",
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Vectio",
-    "countries": [
-      "Poland"
-    ],
+    "countries": ["Poland"],
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "Vision +",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Track & Trace",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Vypex",
-    "countries": [
-      "Australia"
-    ],
+    "countries": ["Australia"],
     "category": "Transportation",
-    "l1": "Transport Management",
-    "l2": "Track Shipments and Equipment"
+    "capabilities": ["TM5"]
   },
   {
     "name": "Waplanner",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Asset & Fleet Management",
-    "l1": "Transport Management",
-    "l2": "Manage Pick-up and Delivery"
+    "capabilities": ["CM1","CM2","CM3","CM4","CM5","CM6"]
   },
   {
     "name": "Winroute",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Route & Load Optimization",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "Worldport",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "Transport Management Systems (TMS)",
-    "l1": "Transport Management",
-    "l2": "Manage Booking with Carrier"
+    "capabilities": ["TM1"]
   },
   {
     "name": "Xcargo",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Freight Marketplaces & Tendering",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   },
   {
     "name": "XMLSpy",
-    "countries": [
-      "France"
-    ],
+    "countries": ["France"],
     "category": "Integration & Middleware",
-    "l1": "Order Management",
-    "l2": "Configure and Capture Customer Order"
+    "capabilities": ["OM5"]
   },
   {
     "name": "XPlanis xGU",
     "countriesRef": "ASTAG GU (Ground)",
     "category": "Financial & Settlement Systems",
-    "l1": "Transport Management",
-    "l2": "Manage Customs Clearance & Regulatory Requirements"
+    "capabilities": ["TM4"]
   },
   {
     "name": "YMS 3M",
-    "countries": [
-      "United States of America"
-    ],
+    "countries": ["United States of America"],
     "category": "YMS/Time Slot Management",
-    "l1": "Transport Management",
-    "l2": "Manage Terminal and Transit Facility Operations"
+    "capabilities": ["TM3"]
   }
 ]

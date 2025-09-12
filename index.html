@@ -41,10 +41,10 @@
 </head>
 <body>
     <div id="sidebar">
-        <h3>Arborescence L1</h3>
+        <h3>Tree structure by Business Capabilities</h3>
         <ul id="l1-tree" class="arbo"></ul>
         <div style="border-top: 3px solid #388e3c; margin: 18px 0 10px 0;"></div>
-        <div style="font-weight:bold; color:#388e3c; margin-bottom:8px;">Applications du pays sélectionné :</div>
+        <h3 style="color:#1a237e; font-weight:bold; margin-bottom:8px;">List of Applications by Country</h3>
         <div id="info-panel" style="max-height: 40vh; overflow-y: auto; background:#f0f4ff; padding:10px; border-radius:6px;"></div>
     </div>
     <div id="map"></div>
@@ -62,23 +62,6 @@ let selectedL2 = null;
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
-
-        function buildTree(data) {
-            const tree = {};
-            data.forEach(item => {
-                // Gère l1 et l2 comme tableau ou string
-                const l1s = Array.isArray(item.l1) ? item.l1 : [item.l1];
-                const l2s = Array.isArray(item.l2) ? item.l2 : [item.l2];
-                l1s.forEach(l1 => {
-                    if (!tree[l1]) tree[l1] = {};
-                    l2s.forEach(l2 => {
-                        if (!tree[l1][l2]) tree[l1][l2] = [];
-                        tree[l1][l2].push(item);
-                    });
-                });
-            });
-            return tree;
-        }
 
         function showCountryMarkers(items) {
             // Retire les anciens markers
@@ -219,7 +202,7 @@ let selectedL2 = null;
         groupedSidebar[cat].push(item.name);
     });
 
-    let html = `<h4 style="margin-bottom:10px;">Toutes les applications pour ${country}</h4>`;
+    let html = `<h4 style="margin-bottom:10px;">${country}</h4>`;
 Object.keys(groupedSidebar).forEach(cat => {
     html += `<div style="margin-bottom:10px;">
         <span style="font-weight:bold;">${cat}</span><br>
@@ -325,45 +308,61 @@ html += `<div style="height: 10px;"></div>`;
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            fetch('data.json')
-                .then(r => r.json())
-                .then(data => {
-                    // Place le code ici, juste après le chargement du JSON
-                    data.forEach(app => {
-                        if (app.countriesRef) {
-                            const refApp = data.find(a => a.name === app.countriesRef);
-                            if (refApp && refApp.countries) {
-                                // Fusionne les pays de la référence et ceux de l'application (en évitant les doublons)
-                                app.countries = Array.from(new Set([
-                                    ...(refApp.countries),
-                                    ...(app.countries || [])
-                                ]));
-                            }
-                        }
-                    });
-
-                    l1TreeData = buildTree(data);
-                    Object.keys(l1TreeData).forEach(l1 => expanded[l1] = false);
-                    renderL1Tree();
-                });
-
-                fetch('countries.geojson')
-    .then(r => r.json())
-    .then(geojson => {
-        L.geoJSON(geojson, {
-            style: {
-                color: "#888",
-                weight: 1,
-                fillOpacity: 0.1
-            },
-            onEachFeature: function (feature, layer) {
-                const name = feature.properties.ADMIN || feature.properties.name;
-                countryLayers[name] = layer;
-                layer.addTo(map); // Affiche tous les pays en gris clair
+    Promise.all([
+        fetch('capabilities.json').then(r => r.json()),
+        fetch('data.json').then(r => r.json())
+    ]).then(([capData, appData]) => {
+        // Fusionne les pays si countriesRef est présent
+        appData.forEach(app => {
+            if (app.countriesRef) {
+                const refApp = appData.find(a => a.name === app.countriesRef);
+                if (refApp && refApp.countries) {
+                    let countries = [...refApp.countries, ...(app.countries || [])];
+                    // Exclure les pays si excludeCountries est présent
+                    if (app.excludeCountries) {
+                        countries = countries.filter(c => !app.excludeCountries.includes(c));
+                    }
+                    app.countries = Array.from(new Set(countries));
+                }
             }
         });
-    });
+
+        // Construit l'arborescence à partir des capabilities
+        const tree = {};
+        appData.forEach(app => {
+            const caps = Array.isArray(app.capabilities) ? app.capabilities : [app.capabilities];
+            caps.forEach(capId => {
+                const cap = capData[capId];
+                if (!cap) return;
+                const l1 = cap.l1_name;
+                const l2 = cap.l2_name;
+                if (!tree[l1]) tree[l1] = {};
+                if (!tree[l1][l2]) tree[l1][l2] = [];
+                tree[l1][l2].push(app);
+            });
         });
+        l1TreeData = tree;
+        Object.keys(l1TreeData).forEach(l1 => expanded[l1] = false);
+        renderL1Tree();
+    });
+
+    fetch('countries.geojson')
+        .then(r => r.json())
+        .then(geojson => {
+            L.geoJSON(geojson, {
+                style: {
+                    color: "#888",
+                    weight: 1,
+                    fillOpacity: 0.1
+                },
+                onEachFeature: function (feature, layer) {
+                    const name = feature.properties.ADMIN || feature.properties.name;
+                    countryLayers[name] = layer;
+                    layer.addTo(map);
+                }
+            });
+        });
+});
         setTimeout(() => {
     document.querySelectorAll('.popup-item').forEach(elem => {
         elem.onclick = function() {
